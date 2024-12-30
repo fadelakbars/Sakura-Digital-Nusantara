@@ -6,6 +6,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/layanan', function () {
-    return view('services');
+Route::get('/publisher', function () {
+    return view('publisher');
+});
+Route::get('/software-house-sakura', function () {
+    return view('software-house');
 });
