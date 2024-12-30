@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PublishOrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,3 +13,4 @@ Route::get('/publisher', function () {
 Route::get('/software-house-sakura', function () {
     return view('software-house');
 });
+Route::post('/publisher-order', [PublishOrderController::class, 'store'])->name('service-order.store'); 
