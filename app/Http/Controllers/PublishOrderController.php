@@ -14,6 +14,8 @@ class PublishOrderController extends Controller
             'book_title' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
+            'job_title' => 'required|string|max:255',
+            'institution' => 'required|string|max:255',
             'service_type' => 'required|in:penerbitan_buku,mencetak_buku,menerbitkan_dan_mencetak',
             'book_size' => 'nullable|in:100-250 halaman,250-550 halaman',
             'print_quantity' => 'nullable|integer|min:1',
@@ -26,11 +28,13 @@ class PublishOrderController extends Controller
             'book_title' => $request->input('book_title'),
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
+            'job_title' => $request->input('job_title'),
+            'institution' => $request->input('institution'),
             'service_type' => $request->input('service_type'),
             'book_size' => $request->input('book_size'),
             'print_quantity' => $request->input('print_quantity'),
             'address' => $request->input('address'),
-            'status' => 'pending', // Default status
+            'status' => 'pending', 
         ]);
 
         // Redirect dengan pesan sukses
