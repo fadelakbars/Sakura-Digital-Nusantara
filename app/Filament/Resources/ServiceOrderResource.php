@@ -23,11 +23,11 @@ class ServiceOrderResource extends Resource
             ->schema([
                 Forms\Components\Select::make('status')
                     ->options([
-                        'pending' => 'Pending',
-                        'verified' => 'Verified',
-                        'in_progress' => 'In Progress',
-                        'completed' => 'Completed',
-                        'revised' => 'Revised',
+                        'Pending' => 'Pending',
+                        'Verified' => 'Verified',
+                        'In Progress' => 'In Progress',
+                        'Completed' => 'Completed',
+                        'Revised' => 'Revised',
                     ])
                     ->default('pending')->label('Status'),
                 Forms\Components\TextInput::make('name')->required()->label('Nama'),
@@ -43,9 +43,9 @@ class ServiceOrderResource extends Resource
                 Forms\Components\Textarea::make('address')->nullable()->label('Alamat'),
                 Forms\Components\Select::make('service_type')
                     ->options([
-                        'penerbitan_buku' => 'Penerbitan Buku',
-                        'mencetak_buku' => 'Mencetak Buku',
-                        'menerbitkan_dan_mencetak' => 'Menerbitkan dan Mencetak Buku',
+                        'Penerbitan Buku' => 'Penerbitan Buku',
+                        'Mencetak Buku' => 'Mencetak Buku',
+                        'Menerbitkan dan Mencetak Buku' => 'Menerbitkan dan Mencetak Buku',
                     ])
                     ->required()->label('Jenis Layanan'),
                 Forms\Components\Select::make('book_size')
@@ -73,11 +73,11 @@ class ServiceOrderResource extends Resource
                 ->badge()
                 ->color(function(string $state) : string{
                     return match($state){
-                        'pending' => 'warning',
-                        'verified' => 'info',
-                        'in_progress' => 'primary',
-                        'completed' => 'success',
-                        'revised' => 'danger',
+                        'Pending' => 'warning',
+                        'Verified' => 'info',
+                        'In progress' => 'primary',
+                        'Completed' => 'success',
+                        'Revised' => 'danger',
                     };
                 })
                 ->sortable(),
@@ -86,11 +86,11 @@ class ServiceOrderResource extends Resource
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
                     ->options([
-                        'pending' => 'Pending',
-                        'verified' => 'Verified',
-                        'in_progress' => 'In Progress',
-                        'completed' => 'Completed',
-                        'revised' => 'Revised',
+                        'Pending' => 'Pending',
+                        'Verified' => 'Verified',
+                        'In Progress' => 'In Progress',
+                        'Completed' => 'Completed',
+                        'Revised' => 'Revised',
                     ])
                     ->label('Filter by Status'),
             ])
