@@ -11,6 +11,7 @@ class PublishOrderController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'book_title' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
             'service_type' => 'required|in:penerbitan_buku,mencetak_buku,menerbitkan_dan_mencetak',
@@ -22,6 +23,7 @@ class PublishOrderController extends Controller
         // Simpan data ke database
         ServiceOrder::create([
             'name' => $request->input('name'),
+            'book_title' => $request->input('book_title'),
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
             'service_type' => $request->input('service_type'),
