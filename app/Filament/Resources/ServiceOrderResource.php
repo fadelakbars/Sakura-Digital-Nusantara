@@ -45,7 +45,7 @@ class ServiceOrderResource extends Resource
                     ->options([
                         'Penerbitan Buku' => 'Penerbitan Buku',
                         'Mencetak Buku' => 'Mencetak Buku',
-                        'Menerbitkan dan Mencetak Buku' => 'Menerbitkan dan Mencetak Buku',
+                        'Menerbitkan dan Mencetak' => 'Menerbitkan dan Mencetak',
                     ])
                     ->required()->label('Jenis Layanan'),
                 Forms\Components\Select::make('book_size')
