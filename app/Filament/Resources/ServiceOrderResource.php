@@ -35,19 +35,19 @@ class ServiceOrderResource extends Resource
                 Forms\Components\TextInput::make('email')->email()->required()->label('Email'),
                 Forms\Components\TextInput::make('phone')->required()->label('Whatsapp'),
                 Forms\Components\DatePicker::make('date_of_birth')->nullable()->label('Tanggal Lahir'),
-                Forms\Components\Select::make('Jenis Kelamin')
-                    ->options(['Pria' => 'Laki-laki', 'Wanita' => 'Perempuan'])
+                Forms\Components\Select::make('gender')
+                    ->options(['Pria' => 'Pria', 'Wanita' => 'Wanita'])
                     ->required()->label('Gender'),
                 Forms\Components\TextInput::make('institution')->nullable()->label('Institusi'),
                 Forms\Components\TextInput::make('job_title')->nullable()->label('Pekerjaan'),
                 Forms\Components\Textarea::make('address')->nullable()->label('Alamat'),
-                Forms\Components\Select::make('Jenis Layanan')
+                Forms\Components\Select::make('service_type')
                     ->options([
                         'penerbitan_buku' => 'Penerbitan Buku',
                         'mencetak_buku' => 'Mencetak Buku',
                         'menerbitkan_dan_mencetak' => 'Menerbitkan dan Mencetak Buku',
                     ])
-                    ->required()->label('Service Type'),
+                    ->required()->label('Jenis Layanan'),
                 Forms\Components\Select::make('book_size')
                     ->options([
                         '100-250 halaman' => '100-250 halaman',
