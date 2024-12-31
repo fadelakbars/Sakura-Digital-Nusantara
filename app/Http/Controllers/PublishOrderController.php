@@ -16,7 +16,7 @@ class PublishOrderController extends Controller
             'phone' => 'required|string|max:20',
             'job_title' => 'required|string|max:255',
             'institution' => 'required|string|max:255',
-            'service_type' => 'required|in:penerbitan_buku,mencetak_buku,menerbitkan_dan_mencetak',
+            'service_type' => 'required|in:Penerbitan Buku","Mencetak Buku","Menerbitkan dan Mencetak',
             'book_size' => 'nullable|in:100-250 halaman,250-550 halaman',
             'print_quantity' => 'nullable|integer|min:1',
             'address' => 'nullable|string',
