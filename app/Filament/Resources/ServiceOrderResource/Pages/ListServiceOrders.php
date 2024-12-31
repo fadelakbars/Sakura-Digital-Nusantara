@@ -12,10 +12,10 @@ class ListServiceOrders extends ListRecords
 
     protected static ?string $title = 'Daftar Orderan Buku'; 
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            Actions\CreateAction::make(),
-        ];
-    }
+    // protected function getHeaderActions(): array
+    // {
+    //     return [
+    //         Actions\CreateAction::make(),
+    //     ];
+    // }
 }

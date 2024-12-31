@@ -21,20 +21,26 @@ class ServiceOrderResource extends Resource
     {
         return $form
             ->schema([
-                // Data Pelanggan
-                Forms\Components\TextInput::make('name')->required()->label('Name'),
+                Forms\Components\Select::make('status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'verified' => 'Verified',
+                        'in_progress' => 'In Progress',
+                        'completed' => 'Completed',
+                        'revised' => 'Revised',
+                    ])
+                    ->default('pending')->label('Status'),
+                Forms\Components\TextInput::make('name')->required()->label('Nama'),
                 Forms\Components\TextInput::make('email')->email()->required()->label('Email'),
-                Forms\Components\TextInput::make('phone')->required()->label('Phone'),
-                Forms\Components\DatePicker::make('date_of_birth')->nullable()->label('Date of Birth'),
-                Forms\Components\Select::make('gender')
+                Forms\Components\TextInput::make('phone')->required()->label('Whatsapp'),
+                Forms\Components\DatePicker::make('date_of_birth')->nullable()->label('Tanggal Lahir'),
+                Forms\Components\Select::make('Jenis Kelamin')
                     ->options(['Pria' => 'Laki-laki', 'Wanita' => 'Perempuan'])
                     ->required()->label('Gender'),
-                Forms\Components\TextInput::make('institution')->nullable()->label('Institution'),
-                Forms\Components\TextInput::make('job_title')->nullable()->label('Job Title'),
-                Forms\Components\Textarea::make('address')->nullable()->label('Address'),
-
-                // Detail Layanan
-                Forms\Components\Select::make('service_type')
+                Forms\Components\TextInput::make('institution')->nullable()->label('Institusi'),
+                Forms\Components\TextInput::make('job_title')->nullable()->label('Pekerjaan'),
+                Forms\Components\Textarea::make('address')->nullable()->label('Alamat'),
+                Forms\Components\Select::make('Jenis Layanan')
                     ->options([
                         'penerbitan_buku' => 'Penerbitan Buku',
                         'mencetak_buku' => 'Mencetak Buku',
@@ -46,21 +52,11 @@ class ServiceOrderResource extends Resource
                         '100-250 halaman' => '100-250 halaman',
                         '250-550 halaman' => '250-550 halaman',
                     ])
-                    ->nullable()->label('Book Size'),
-                Forms\Components\TextInput::make('print_quantity')->numeric()->nullable()->label('Print Quantity'),
-
-                // Invoice & Status
-                Forms\Components\TextInput::make('invoice_number')->nullable()->label('Invoice Number'),
-                Forms\Components\TextInput::make('amount')->numeric()->nullable()->label('Amount'),
-                Forms\Components\Select::make('status')
-                    ->options([
-                        'pending' => 'Pending',
-                        'verified' => 'Verified',
-                        'in_progress' => 'In Progress',
-                        'completed' => 'Completed',
-                        'revised' => 'Revised',
-                    ])
-                    ->default('pending')->label('Status'),
+                    ->nullable()->label('Ukuran Buku'),
+                Forms\Components\TextInput::make('print_quantity')->numeric()->nullable()->label('Jumlah Cetakan'),
+                Forms\Components\TextInput::make('invoice_number')->nullable()->label('Nomor Invoice'),
+                Forms\Components\TextInput::make('amount')->numeric()->nullable()->label('Harga'),
+                
             ]);
     }
 
@@ -68,10 +64,8 @@ class ServiceOrderResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->label('Name')->sortable()->searchable(),
-                // Tables\Columns\TextColumn::make('email')->label('Email')->searchable(),
-                Tables\Columns\TextColumn::make('name')->label('Nama')->searchable(),
-                Tables\Columns\TextColumn::make('service_type')->label('Service Type')->sortable(),
+                Tables\Columns\TextColumn::make('name')->label('Nama')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('service_type')->label('Jenis Layanan')->sortable(),
                 Tables\Columns\TextColumn::make('status')
                 ->label('Status')
                 ->badge()
@@ -85,8 +79,7 @@ class ServiceOrderResource extends Resource
                     };
                 })
                 ->sortable(),
-                // Tables\Columns\TextColumn::make('invoice_number')->label('Invoice Number'),
-                Tables\Columns\TextColumn::make('amount')->label('Amount')->money('idr'),
+                Tables\Columns\TextColumn::make('amount')->label('Harga')->money('idr'),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
