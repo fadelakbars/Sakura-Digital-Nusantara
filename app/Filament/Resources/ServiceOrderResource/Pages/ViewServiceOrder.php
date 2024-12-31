@@ -10,6 +10,8 @@ class ViewServiceOrder extends ViewRecord
 {
     protected static string $resource = ServiceOrderResource::class;
 
+    protected static ?string $title = 'Detail  Orderan Buku'; 
+
     protected function getHeaderActions(): array
     {
         return [

@@ -34,7 +34,7 @@ class PublishOrderController extends Controller
             'book_size' => $request->input('book_size'),
             'print_quantity' => $request->input('print_quantity'),
             'address' => $request->input('address'),
-            'status' => 'pending', 
+            'status' => 'Pending', 
         ]);
 
         // Redirect dengan pesan sukses
