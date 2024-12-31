@@ -5,14 +5,14 @@
 @section('content')
 
 {{-- jumbotron --}}
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white dark:bg-gray-900 mb-28">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Sakura Publisher</h1>
-            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Publisher Bermutu, Berkualitas, dan Sesuai dengan Kaidah Akademik. Kami memiliki beberapa jurnal dari berbagai bidang ilmu. Scope jurnal dapat dilihat pada masing-masing web jurnal.</p>
+            <h1 class="mb-4 mt-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Sakura Publisher</h1>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Penerbit Nasional yang berfokus pada buku-buku akademik independen, kami profesional dalam menyebarluaskan hasil penelitian para peneliti Indonesia secara nasional dan global. Kami menawarkan kesempatan bagi penelitian dan pelaku pendidikan untuk mencapai komunitas akademik, dengan komitmen konsisten terhadap kualitas dan inovasi serta diseminasi melalui indeks portal akademik.</p>
             <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-                <a href="#" class="py-3 px-5 sm:ms-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                     Daftar Menerbitkan Buku
-                </a>  
+                </button>
             </div>
         </div>
     </section>
@@ -135,6 +135,7 @@
     <section class="bg-white dark:bg-gray-900">
         <h1 class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white text-center">Layanan</h1>
         <div class="flex flex-wrap justify-center gap-4 p-4">
+            <p class="mb-5 px-10 text-center text-gray-500 sm:text-lg dark:text-gray-400">Layanan kami sebagai penerbit nasional menawarkan platform profesional untuk penerbitan buku akademik independen, media elektronik, dan jurnal ilmiah. Dengan fokus utama pada penyebarluasan hasil penelitian para peneliti Indonesia, kami memberikan keunggulan dalam kualitas, inovasi, dan jangkauan komunitas akademik.</p>
             
             <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
@@ -153,7 +154,7 @@
                 <a href="#">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Penerbitan Buku</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Penerbitan buku ber-ISBN.</p>
                 <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                     Terbitkan Buku
                 </button>
