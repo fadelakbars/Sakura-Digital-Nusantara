@@ -75,7 +75,7 @@ class ServiceOrderResource extends Resource
                     return match($state){
                         'Pending' => 'warning',
                         'Verified' => 'info',
-                        'In progress' => 'primary',
+                        'In Progress' => 'primary',
                         'Completed' => 'success',
                         'Revised' => 'danger',
                     };
