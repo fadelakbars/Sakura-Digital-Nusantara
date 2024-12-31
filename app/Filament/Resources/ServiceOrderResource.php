@@ -13,9 +13,9 @@ class ServiceOrderResource extends Resource
 {
     protected static ?string $model = ServiceOrder::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
-    protected static ?string $navigationLabel = 'Service Orders';
+    protected static ?string $navigationLabel = 'Publiher Order';
 
     public static function form(Form $form): Form
     {
@@ -69,12 +69,24 @@ class ServiceOrderResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->label('Name')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('email')->label('Email')->searchable(),
+                // Tables\Columns\TextColumn::make('email')->label('Email')->searchable(),
+                Tables\Columns\TextColumn::make('name')->label('Nama')->searchable(),
                 Tables\Columns\TextColumn::make('service_type')->label('Service Type')->sortable(),
-                Tables\Columns\TextColumn::make('status')->label('Status')->sortable(),
-                Tables\Columns\TextColumn::make('invoice_number')->label('Invoice Number'),
+                Tables\Columns\TextColumn::make('status')
+                ->label('Status')
+                ->badge()
+                ->color(function(string $state) : string{
+                    return match($state){
+                        'pending' => 'warning',
+                        'verified' => 'info',
+                        'in_progress' => 'primary',
+                        'completed' => 'success',
+                        'revised' => 'danger',
+                    };
+                })
+                ->sortable(),
+                // Tables\Columns\TextColumn::make('invoice_number')->label('Invoice Number'),
                 Tables\Columns\TextColumn::make('amount')->label('Amount')->money('idr'),
-                // Tables\Columns\TextColumn::make('created_at')->label('Created At')->dateTime(),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')

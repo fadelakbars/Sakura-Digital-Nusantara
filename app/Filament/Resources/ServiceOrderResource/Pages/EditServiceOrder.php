@@ -17,4 +17,10 @@ class EditServiceOrder extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+    protected static ?string $title = 'Update Detail  Order Buku'; 
+
+    protected function getRedirectUrl(): string
+    {
+        return route('filament.admin.resources.service-orders.index');
+    }
 }

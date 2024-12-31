@@ -10,6 +10,8 @@ class ListServiceOrders extends ListRecords
 {
     protected static string $resource = ServiceOrderResource::class;
 
+    protected static ?string $title = 'Daftar Orderan Buku'; 
+
     protected function getHeaderActions(): array
     {
         return [
