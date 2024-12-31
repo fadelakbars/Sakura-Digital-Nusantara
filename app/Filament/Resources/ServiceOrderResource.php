@@ -15,7 +15,7 @@ class ServiceOrderResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
-    protected static ?string $navigationLabel = 'Publiher Order';
+    protected static ?string $navigationLabel = 'Orderan Buku';
 
     public static function form(Form $form): Form
     {
@@ -31,6 +31,7 @@ class ServiceOrderResource extends Resource
                     ])
                     ->default('pending')->label('Status'),
                 Forms\Components\TextInput::make('name')->required()->label('Nama'),
+                Forms\Components\TextInput::make('book_title')->required()->label('Judul Buku'),
                 Forms\Components\TextInput::make('email')->email()->required()->label('Email'),
                 Forms\Components\TextInput::make('phone')->required()->label('Whatsapp'),
                 Forms\Components\DatePicker::make('date_of_birth')->nullable()->label('Tanggal Lahir'),
@@ -65,6 +66,7 @@ class ServiceOrderResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->label('Nama')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('book_title')->label('Judul Buku')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('service_type')->label('Jenis Layanan')->sortable(),
                 Tables\Columns\TextColumn::make('status')
                 ->label('Status')
