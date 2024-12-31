@@ -16,6 +16,7 @@ class ServiceOrder extends Model
      */
     protected $fillable = [
         'name',
+        'book_title',
         'email',
         'phone',
         'date_of_birth',
