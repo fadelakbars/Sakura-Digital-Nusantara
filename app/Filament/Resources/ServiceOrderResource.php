@@ -74,7 +74,7 @@ class ServiceOrderResource extends Resource
                 Tables\Columns\TextColumn::make('status')->label('Status')->sortable(),
                 Tables\Columns\TextColumn::make('invoice_number')->label('Invoice Number'),
                 Tables\Columns\TextColumn::make('amount')->label('Amount')->money('idr'),
-                Tables\Columns\TextColumn::make('created_at')->label('Created At')->dateTime(),
+                // Tables\Columns\TextColumn::make('created_at')->label('Created At')->dateTime(),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
