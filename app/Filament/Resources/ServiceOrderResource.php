@@ -86,6 +86,7 @@ class ServiceOrderResource extends Resource
                 ->sortable(),
                 Tables\Columns\TextColumn::make('amount')->label('Harga')->money('idr')->sortable()->searchable(),
                 Tables\Columns\IconColumn::make('phone')
+                    ->label('Whatsapp')
                     ->getStateUsing(fn() => true) 
                     ->icon(fn(bool $state): string => 'heroicon-o-phone') 
                     ->color('success')
