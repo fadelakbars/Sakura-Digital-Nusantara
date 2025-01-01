@@ -3,7 +3,9 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceOrderResource\Pages;
 use App\Models\ServiceOrder;
+use Filament\Actions\Action;
 use Filament\Forms;
+use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -67,6 +69,7 @@ class ServiceOrderResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')->label('Nama')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('book_title')->label('Judul Buku')->sortable()->searchable(),
+                
                 Tables\Columns\TextColumn::make('service_type')->label('Jenis Layanan')->sortable(),
                 Tables\Columns\TextColumn::make('status')
                 ->label('Status')
@@ -97,6 +100,12 @@ class ServiceOrderResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Action::make('WA')
+                    ->label('Chat WhatsApp')
+                    ->icon('heroicon-o-chat')
+                    ->color('success')
+                    ->url(fn ($record) => 'https://wa.me/' . $record->phone)
+                    ->openUrlInNewTab(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make()->label('Delete Selected'),
