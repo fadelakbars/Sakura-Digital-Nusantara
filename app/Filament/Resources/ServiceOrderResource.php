@@ -95,7 +95,7 @@ class ServiceOrderResource extends Resource
                     ->label('Filter by Status'),
             ])
             ->actions([
-                // Tables\Actions\ViewAction::make(),
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
