@@ -7,7 +7,7 @@
     <style>
         @page {
             size: A4;
-            margin: 20mm;
+            margin: 15mm;
         }
         body {
             font-family: 'Arial', sans-serif;
@@ -17,41 +17,43 @@
         .container {
             width: 100%;
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px;
             background-color: #fff;
         }
         .header {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 30px;
+            align-items: center;
+            margin-bottom: 20px;
             border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
+            padding-bottom: 5px;
         }
-        .header img {
-            max-width: 100px;
-        }
-        .header h1 {
+        .header .company-info h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
-            text-align: left;
         }
-        .header p {
+        .header .company-info p {
             margin: 0;
-            font-size: 14px;
+            font-size: 12px;
             color: #555;
+        }
+        .header .contact-info p {
+            margin: 0;
+            font-size: 12px;
+            color: #555;
+            text-align: right;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 8px;
             text-align: left;
-            font-size: 12px;
+            font-size: 11px;
         }
         th {
             background-color: #f4f4f4;
@@ -59,9 +61,31 @@
         }
         .total {
             text-align: right;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
+            margin-top: 10px;
+        }
+        .payment-info {
             margin-top: 20px;
+            font-size: 12px;
+        }
+        .payment-info h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .payment-info .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #f9f9f9;
+        }
+        .payment-info .card p {
+            margin: 0;
+            font-size: 11px;
         }
     </style>
 </head>
@@ -69,20 +93,23 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            {{-- <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/SWS-Logo.png'))) }}" alt="Logo"> --}}
-            <div>
+            <div class="company-info">
                 <h1>Sakura Digital Nusantara</h1>
                 <p>Jl. Biola Raya J148 Perumnas Antang, Kelurahan Manggala, Makassar</p>
+            </div>
+            <div class="contact-info">
+                <p>+628114101349</p>
+                <p>publishersakura@gmail.com</p>
             </div>
         </div>
 
         <!-- Invoice Details -->
-        <h2 style="margin-bottom: 10px; font-size: 18px; font-weight: bold;">Invoice</h2>
+        <h2 style="margin-bottom: 10px; font-size: 16px; font-weight: bold;">Invoice</h2>
         <p><strong>Nomor:</strong> {{ $invoice->invoice_number }}</p>
         <p><strong>Tanggal:</strong> {{ $invoice->created_at->format('d F Y') }}</p>
 
         <!-- Detail Pemesan -->
-        <h3 style="margin-bottom: 10px; font-size: 16px;">Detail Pemesan</h3>
+        <h3 style="margin-bottom: 10px; font-size: 14px;">Detail Pemesan</h3>
         <table>
             <tr>
                 <th>Nama</th>
@@ -103,7 +130,7 @@
         </table>
 
         <!-- Detail Layanan -->
-        <h3 style="margin-bottom: 10px; font-size: 16px;">Detail Layanan</h3>
+        <h3 style="margin-bottom: 10px; font-size: 14px;">Detail Layanan</h3>
         <table>
             <tr>
                 <th>Layanan</th>
@@ -126,6 +153,23 @@
         <!-- Total -->
         <div class="total">
             Total: IDR {{ number_format($invoice->amount, 2) }}
+        </div>
+
+        <!-- Payment Info -->
+        <div class="payment-info">
+            <h3>Informasi Pembayaran</h3>
+            <div class="card">
+                <p><strong>Bank BCA:</strong> 123-456-7890</p>
+                <p>Atas Nama: Sakura Digital Nusantara</p>
+            </div>
+            <div class="card">
+                <p><strong>Bank Mandiri:</strong> 987-654-3210</p>
+                <p>Atas Nama: Sakura Digital Nusantara</p>
+            </div>
+            <div class="card">
+                <p><strong>E-Wallet Gopay:</strong> 0812-3456-7890</p>
+                <p>Atas Nama: Sakura Digital Nusantara</p>
+            </div>
         </div>
     </div>
 </body>
