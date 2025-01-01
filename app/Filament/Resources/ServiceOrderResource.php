@@ -81,7 +81,7 @@ class ServiceOrderResource extends Resource
                     };
                 })
                 ->sortable(),
-                Tables\Columns\TextColumn::make('amount')->label('Harga')->money('idr'),
+                Tables\Columns\TextColumn::make('amount')->label('Harga')->money('idr')->sortable()->searchable(),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
@@ -95,7 +95,7 @@ class ServiceOrderResource extends Resource
                     ->label('Filter by Status'),
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
+                // Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
