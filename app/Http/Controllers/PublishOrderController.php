@@ -54,7 +54,7 @@ class PublishOrderController extends Controller
             'status' => 'Pending', 
         ]);
 
-        alert()->success('Success!','Orderan berhasil dibuat');
+        alert()->success('Terimakasih!','Orderan berhasil dibuat, silahkan tunggu konfirmasi dari admin');
         return back();
 
         // Redirect dengan pesan sukses
