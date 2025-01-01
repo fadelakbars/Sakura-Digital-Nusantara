@@ -86,15 +86,16 @@ class ServiceOrderResource extends Resource
                 ->sortable(),
                 Tables\Columns\TextColumn::make('amount')->label('Harga')->money('idr')->sortable()->searchable(),
                 Tables\Columns\IconColumn::make('phone')
-                    ->label('Whatsapp')
+                    ->label('Actions')
                     ->getStateUsing(fn() => true) 
                     ->icon(fn(bool $state): string => 'heroicon-o-phone') 
                     ->color('success')
                     ->url(fn($record) => 'https://wa.me/' . preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $record->phone)))
                     ->openUrlInNewTab(), 
-                Tables\Columns\IconColumn::make('download_invoice')
+                Tables\Columns\IconColumn::make('')
                     ->label('Download Invoice')
-                    ->icon('heroicon-o-arrow-down-on-square')
+                    ->getStateUsing(fn() => true) 
+                    ->icon(fn(bool $state): string => 'heroicon-o-arrow-down-on-square') 
                     ->color('success')
                     ->url(fn($record) => route('invoice.download', ['id' => $record->id]))
                     ->openUrlInNewTab(),
