@@ -85,6 +85,12 @@ class ServiceOrderResource extends Resource
                 })
                 ->sortable(),
                 Tables\Columns\TextColumn::make('amount')->label('Harga')->money('idr')->sortable()->searchable(),
+                Tables\Columns\IconColumn::make('phone')
+                    ->getStateUsing(fn() => true) 
+                    ->icon(fn(bool $state): string => 'heroicon-o-phone') 
+                    ->color('success')
+                    ->url(fn($record) => 'https://wa.me/' . preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $record->phone)))
+                    ->openUrlInNewTab(), 
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
@@ -100,12 +106,6 @@ class ServiceOrderResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-                Action::make('WA')
-                    ->label('Chat WhatsApp')
-                    ->icon('heroicon-o-chat')
-                    ->color('success')
-                    ->url(fn ($record) => 'https://wa.me/' . $record->phone)
-                    ->openUrlInNewTab(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make()->label('Delete Selected'),
