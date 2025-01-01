@@ -98,7 +98,7 @@ class ServiceOrderResource extends Resource
                     ->icon(fn(bool $state): string => 'heroicon-o-arrow-down-on-square') 
                     ->color('success')
                     ->url(fn($record) => route('invoice.download', ['id' => $record->id]))
-                    ->openUrlInNewTab(),
+                    // ->openUrlInNewTab(),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
