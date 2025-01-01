@@ -434,6 +434,18 @@
 {{-- @yield('form-order-publikasi') --}}
 
 {{-- modal order publish buku --}}
+@if(session('success'))
+<div id="success-modal" tabindex="-1" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div class="bg-white rounded-lg shadow-lg p-6 text-center max-w-sm mx-auto">
+        <h2 class="text-lg font-semibold text-green-600">Sukses!</h2>
+        <p class="text-gray-700 mt-2">{{ session('success') }}</p>
+        <button onclick="document.getElementById('success-modal').classList.add('hidden')" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            OK
+        </button>
+    </div>
+</div>
+@endif
+
     <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -633,5 +645,15 @@
         </div>
     </section>
 {{-- e-commerce --}}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const successModal = document.getElementById('success-modal');
+        if (successModal) {
+            setTimeout(() => {
+                successModal.classList.add('hidden');
+            }, 3000); // Tutup modal setelah 3 detik
+        }
+    });
+</script>
 
 @endsection
