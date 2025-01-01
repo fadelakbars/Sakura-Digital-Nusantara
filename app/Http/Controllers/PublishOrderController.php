@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use App\Models\ServiceOrder;
 use Illuminate\Http\Request;
+
 
 class PublishOrderController extends Controller
 {
@@ -50,7 +52,10 @@ class PublishOrderController extends Controller
             'status' => 'Pending', 
         ]);
 
+        alert()->success('Success!','Orderan berhasil dibuat');
+        return back();
+
         // Redirect dengan pesan sukses
-        return redirect()->back()->with('success', 'Order submitted successfully!');
+        // return redirect()->back()->with('success', 'Order submitted successfully!');
     }
 }

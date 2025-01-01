@@ -92,6 +92,8 @@
         </div>
     </nav>
     
+    @include('sweetalert::alert')
+    
     <main>
         @yield('content') <!-- Area yang akan diganti di setiap halaman -->
     </main>
