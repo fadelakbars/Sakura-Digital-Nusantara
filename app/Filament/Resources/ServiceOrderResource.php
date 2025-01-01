@@ -92,6 +92,12 @@ class ServiceOrderResource extends Resource
                     ->color('success')
                     ->url(fn($record) => 'https://wa.me/' . preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $record->phone)))
                     ->openUrlInNewTab(), 
+                Tables\Columns\IconColumn::make('download_invoice')
+                    ->label('Download Invoice')
+                    ->icon('heroicon-o-arrow-down-on-square')
+                    ->color('success')
+                    ->url(fn($record) => route('invoice.download', ['id' => $record->id]))
+                    ->openUrlInNewTab(),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
