@@ -613,14 +613,14 @@
                 <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Terhubung dengan Toko Kami</h5>
                 <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Temukan koleksi lengkap kami di Shopee dan Tokopedia. Nikmati kemudahan berbelanja kapan saja dan di mana saja.</p>
                 <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
-                    <a href="#" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                    <a href={{ url('https://shopee.co.id/sakura_publisher', []) }} class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                         <img src="img/shopee.png" alt="Tokopedia Mascot" class="me-3 w-10 h-10">
                         <div class="text-left rtl:text-right">
                             <div class="mb-1 text-xs">Belanja di</div>
                             <div class="-mt-1 font-sans text-sm font-semibold">Shopee</div>
                         </div>
                     </a>
-                    <a href="#" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                    <a href={{ url('https://www.tokopedia.com/sakurapublisher', []) }} class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                         <img src="img/Tokopedia_Mascot.png" alt="Tokopedia Mascot" class="me-3 w-10 h-10">
                         <div class="text-left rtl:text-right">
                             <div class="mb-1 text-xs">Belanja di</div>
