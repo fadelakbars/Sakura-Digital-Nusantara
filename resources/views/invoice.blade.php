@@ -69,7 +69,7 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/SWS-Logo.png'))) }}" alt="Logo">
+            {{-- <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/SWS-Logo.png'))) }}" alt="Logo"> --}}
             <div>
                 <h1>Sakura Digital Nusantara</h1>
                 <p>Jl. Biola Raya J148 Perumnas Antang, Kelurahan Manggala, Makassar</p>
