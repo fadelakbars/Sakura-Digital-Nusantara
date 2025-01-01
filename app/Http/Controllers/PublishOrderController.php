@@ -23,6 +23,16 @@ class PublishOrderController extends Controller
             'address' => 'nullable|string',
         ]);
 
+        $price = 0;
+        if ($request->input('book_size') === '100-250 halaman') {
+            $price = 450000;
+        } elseif ($request->input('book_size') === '250-550 halaman') {
+            $price = 550000;
+        }
+
+        // Hitung total harga berdasarkan jumlah cetakan
+        $total_price = $price * ($request->input('print_quantity') ?? 1);
+
         // Simpan data ke database
         ServiceOrder::create([
             'name' => $request->input('name'),
@@ -36,6 +46,7 @@ class PublishOrderController extends Controller
             'book_size' => $request->input('book_size'),
             'print_quantity' => $request->input('print_quantity'),
             'address' => $request->input('address'),
+            'amount' => $total_price,
             'status' => 'Pending', 
         ]);
 
