@@ -19,6 +19,9 @@ class ServiceOrderResource extends Resource
 
     protected static ?string $navigationLabel = 'Orderan Buku';
 
+    protected static ?string $navigationGroup = 'Publisher';
+
+
     public static function form(Form $form): Form
     {
         return $form
@@ -86,7 +89,7 @@ class ServiceOrderResource extends Resource
                 ->sortable(),
                 Tables\Columns\TextColumn::make('amount')->label('Harga')->money('idr')->sortable()->searchable(),
                 Tables\Columns\IconColumn::make('phone')
-                    ->label('Actions')
+                    ->label('Whatsapp')
                     ->getStateUsing(fn() => true) 
                     ->icon(fn(bool $state): string => 'heroicon-o-phone') 
                     ->color('success')
@@ -96,7 +99,7 @@ class ServiceOrderResource extends Resource
                     ->label('Download Invoice')
                     ->getStateUsing(fn() => true) 
                     ->icon(fn(bool $state): string => 'heroicon-o-arrow-down-on-square') 
-                    ->color('success')
+                    ->color('info')
                     ->url(fn($record) => route('invoice.download', ['id' => $record->id]))
                     // ->openUrlInNewTab(),
             ])
