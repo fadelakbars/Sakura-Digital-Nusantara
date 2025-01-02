@@ -7,7 +7,7 @@ use App\Http\Controllers\PublishOrderController;
 use Illuminate\Support\Facades\Route;
 
 // HOME
-Route::get('/', [HomeViewController::class. 'index']);
+Route::get('/', [HomeViewController::class, 'index']);
 // END HOME
 
 // PROFIL
