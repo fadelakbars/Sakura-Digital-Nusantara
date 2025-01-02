@@ -6,7 +6,7 @@
 
 <section  class="bg-white dark:bg-gray-900">
     <div class="p-10 mb-40">
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center gap-10">
         
             <!-- Level 1 -->
             <div class="flex flex-col items-center mt-4">
