@@ -19,6 +19,7 @@ class Book extends Model
         'description',
         'author',
         'price',
+        'link',
         'stock',
         'cover_image',
         'category',

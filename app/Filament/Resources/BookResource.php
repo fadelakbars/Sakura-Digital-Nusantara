@@ -42,6 +42,11 @@ class BookResource extends Resource
                     ->label('Harga')
                     ->numeric()
                     ->required(),
+                Forms\Components\TextInput::make('link')
+                    ->label('Link E-Commerce')
+                    // ->url() // Validasi bahwa input adalah URL
+                    // ->placeholder('https://example.com')
+                    ->nullable(),
                 Forms\Components\TextInput::make('stock')
                     ->label('Stok')
                     ->numeric()
@@ -83,6 +88,9 @@ class BookResource extends Resource
                 Tables\Columns\TextColumn::make('price')
                     ->label('Harga')
                     ->money('IDR', true),
+                Tables\Columns\TextColumn::make('link')
+                    ->label('Link')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('stock')
                     ->label('Stok')
                     ->sortable(),
