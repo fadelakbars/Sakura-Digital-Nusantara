@@ -49,6 +49,7 @@ class BookResource extends Resource
                 Forms\Components\FileUpload::make('cover_image')
                     ->label('Sampul Buku')
                     ->image()
+                    ->maxSize(1000)
                     ->directory('books'),
                 Forms\Components\TextInput::make('category')
                     ->label('Kategori')
