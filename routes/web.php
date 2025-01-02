@@ -11,7 +11,7 @@ Route::get('/', [HomeViewController::class. 'index']);
 // END HOME
 
 // PROFIL
-Route::view('/profile', 'profil');
+Route::view('/profil', 'profil');
 // END PROFIL
 
 // PUBLISHER  
