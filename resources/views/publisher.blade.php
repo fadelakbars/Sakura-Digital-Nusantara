@@ -483,6 +483,7 @@
     <section class="bg-white dark:bg-gray-900">
         <h1 class="mb-1 mt-10 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white text-center">Katalog</h1>
         <div class="flex flex-wrap justify-center gap-4 p-10">
+            <p class="mb-5 px-10 text-center text-gray-500 sm:text-lg dark:text-gray-400">Buku populer kami menawarkan pengalaman mendalam dan mendidik kepada pembaca dengan berbagai topik yang menginspirasi dan relevan. Dikemas dengan gaya penulisan yang memikat dan aksesible, buku-buku ini memadukan keahlian penulis dengan kebutuhan dan minat pembaca modern.</p>
 
             @if (isset($books) && $books->isNotEmpty())
                 @foreach ($books as $book)
@@ -495,7 +496,7 @@
                                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $book->title }}</h5>
                             </a>
                             <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ $book->price }}</span>
+                                <span class="text-3xl font-bold text-gray-900 dark:text-white">Rp. {{ $book->price }}</span>
                                 <a href="/dua" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
                             </div>
                         </div>
