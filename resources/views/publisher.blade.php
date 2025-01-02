@@ -484,7 +484,7 @@
         <h1 class="mb-1 mt-10 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white text-center">Katalog</h1>
         <div class="flex flex-wrap justify-center gap-4 p-10">
 
-            @if ()
+            @if (isset($books) && $books->isNotEmpty())
                 @foreach ($books as $book)
                     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
