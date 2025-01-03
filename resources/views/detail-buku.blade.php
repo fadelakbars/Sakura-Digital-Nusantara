@@ -5,11 +5,11 @@
 @section('content')
 <section class="bg-white dark:bg-gray-900 py-12">
     <div class="container mx-auto px-4">
-        <div class="flex flex-wrap md:flex-nowrap gap-10">
+        <div class="flex flex-wrap md:flex-nowrap gap-10 p-20">
 
             {{-- <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover"> --}}
 
-            <div class="w-full md:w-auto flex-shrink-0">
+            <div class="w-full md:w-auto flex-shrink-0 mr-20">
                 <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
             </div>
             <!-- Book Details -->
