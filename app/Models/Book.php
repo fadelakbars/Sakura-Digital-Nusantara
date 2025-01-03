@@ -20,6 +20,7 @@ class Book extends Model
         'author',
         'price',
         'link',
+        'tokopedia',
         'stock',
         'cover_image',
         'category',

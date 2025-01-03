@@ -43,9 +43,10 @@ class BookResource extends Resource
                     ->numeric()
                     ->required(),
                 Forms\Components\TextInput::make('link')
-                    ->label('Link E-Commerce')
-                    // ->url() // Validasi bahwa input adalah URL
-                    // ->placeholder('https://example.com')
+                    ->label('Link Shopee')
+                    ->nullable(),
+                Forms\Components\TextInput::make('tokopedia')
+                    ->label('Link Tokopedia')
                     ->nullable(),
                 Forms\Components\TextInput::make('stock')
                     ->label('Stok')
