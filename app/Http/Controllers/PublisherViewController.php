@@ -17,7 +17,7 @@ class PublisherViewController extends Controller
     }
 
     public function detailbuku($id) {
-        $book = Book::fileinode($id);
+        $book = Book::findOrFail($id);
 
         return view('detail-buku', ['book' => $book]);
     }
