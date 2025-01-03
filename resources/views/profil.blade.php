@@ -6,7 +6,6 @@
 
 {{-- about --}}
     <section class="bg-white dark:bg-gray-900">
-        <h1 class="mb-1 mt-10 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white text-center">Profil</h1>
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
             <h1 class="mb-4 text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white">Visi</h1>
             <p class="mb-8 text-md font-normal text-gray-500 lg:text-md sm:px-16 lg:px-48 dark:text-gray-400">Menjadi Lembaga Penerbit yang kredibel, kompeten, dan berkualitas terbaik bagi mitra demi tercapainya ekosistem literasi bagi generasi emas Indonesia yang berperadaban maju.</p>
