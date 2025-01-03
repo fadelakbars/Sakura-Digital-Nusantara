@@ -5,7 +5,7 @@
 @section('content')
 <section class="bg-white dark:bg-gray-900 py-12">
     <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="flex flex-col gap-10">
             <!-- Book Cover -->
             <div class="flex justify-center items-center">
                 <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
