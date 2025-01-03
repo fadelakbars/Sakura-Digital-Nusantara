@@ -10,6 +10,8 @@ class ListJournals extends ListRecords
 {
     protected static string $resource = JournalResource::class;
 
+    protected static ?string $title = 'Daftar jurnal'; 
+    
     protected function getHeaderActions(): array
     {
         return [

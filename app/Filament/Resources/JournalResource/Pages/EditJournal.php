@@ -16,4 +16,11 @@ class EditJournal extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Edit Data jurnal'; 
+    
+    protected function getRedirectUrl(): string
+    {
+        return route('filament.admin.resources.journals.index');
+    }
 }
