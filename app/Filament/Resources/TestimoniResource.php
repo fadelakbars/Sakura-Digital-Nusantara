@@ -21,7 +21,7 @@ class TestimoniResource extends Resource
 {
     protected static ?string $model = Testimoni::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-right';
     
     protected static ?string $navigationLabel = 'Testimoni';
     // protected static ?string $navigationGroup = 'Publisher';
