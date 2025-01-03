@@ -15,38 +15,52 @@
                 3. Memfasilitasi seluruh kalangan dosen, mahasiswa, profesional, dan masyarakat dalam menerbitkan tulisan dan karyanya dalam bentuk buku layak jual.<br>
                 4. Memotivasi dan menginspirasi masyarakat penulis dalam menghasilkan karya yang berkualitas dan orisinal.<br>
                 5. Menjadi perusahaan penerbit umum yang professional, terpercaya, dan berdaya saing nasional.</p>
-            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-                <a href="#" class="py-3 px-5 sm:ms-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                    Daftar Menerbitkan Buku
-                </a>  
-            </div>
         </div>
     </section>
 {{-- about --}}
 
 {{-- struktur organisasi --}}
-    <section class="organization-structure">
-        <div class="container">
-            <!-- Root -->
-            <div class="level root">
-                <div class="box">CV. SDN</div>
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+        <!-- Root Level -->
+        <div class="text-center mb-8">
+            <div class="inline-block bg-blue-500 text-white font-bold rounded-md px-6 py-4">
+            CV. SDN
             </div>
-            <!-- Director -->
-            <div class="level">
-                <div class="box">Direktur</div>
+        </div>
+    
+        <!-- Direktur -->
+        <div class="text-center mb-8">
+            <div class="inline-block bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4">
+            Direktur
             </div>
-            <!-- Komisaris dan CEO -->
-            <div class="level">
-                <div class="box">Komisaris</div>
-                <div class="box">CEO</div>
+        </div>
+    
+        <!-- Komisaris dan CEO -->
+        <div class="flex justify-center gap-4 mb-8">
+            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 w-48 text-center">
+            Komisaris
             </div>
-            <!-- Divisions -->
-            <div class="level">
-                <div class="box">Divisi Publisher</div>
-                <div class="box">Divisi Journal</div>
-                <div class="box">Application & Data Center</div>
-                <div class="box">IT Development</div>
+            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 w-48 text-center">
+            CEO
             </div>
+        </div>
+    
+        <!-- Divisions -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
+            Divisi Publisher
+            </div>
+            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
+            Divisi Journal
+            </div>
+            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
+            Application & Data Center
+            </div>
+            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
+            IT Development
+            </div>
+        </div>
         </div>
     </section>
 {{-- struktur organisasi --}}
