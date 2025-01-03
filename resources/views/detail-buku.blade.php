@@ -5,7 +5,7 @@
 @section('content')
 <section class="bg-white dark:bg-gray-900 py-12">
     <div class="container px-4">
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+        <div class="grid grid-cols-2 md:grid-cols-3">
             <!-- Book Cover -->
             <div class="flex justify-center items-center">
                 <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
@@ -14,7 +14,7 @@
             <!-- Book Details -->
             <div class="flex flex-col justify-center">
                 <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{{ $book->title }}</h1>
-                <table class="text-gray-700 dark:text-gray-400">
+                <table class="table-auto text-gray-700 dark:text-gray-400">
                     <tbody>
                         <tr>
                             <td class="font-semibold pr-4">Penulis</td>
