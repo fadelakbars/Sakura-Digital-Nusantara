@@ -7,12 +7,12 @@
     <div class="container mx-auto px-4">
         <div class="flex flex-col gap-10">
             <!-- Book Cover -->
-            <div class="flex justify-center items-center">
-                <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
-            </div>
+            {{-- <div class="flex justify-center items-center"> --}}
+            {{-- </div> --}}
+            <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
 
             <!-- Book Details -->
-            <div class="flex flex-col justify-center space-y-4">
+            <div class="">
                 <h1 class="text-3xl font-bold text-gray-900 dark:text-white">{{ $book->title }}</h1>
 
                 <!-- Table for Book Details -->
