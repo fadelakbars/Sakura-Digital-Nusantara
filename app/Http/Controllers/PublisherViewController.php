@@ -15,4 +15,10 @@ class PublisherViewController extends Controller
             'books' => $books
         ]);
     }
+
+    public function detailbuku($id) {
+        $book = Book::fileinode($id);
+
+        return view('detail-buku', ['book' => $book]);
+    }
 }

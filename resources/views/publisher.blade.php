@@ -487,23 +487,20 @@
 
             @if (isset($books) && $books->isNotEmpty())
                 @foreach ($books as $book)
+                <a href={{ url('/buku/'.$book->id, []) }}>
                     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
                             <img class="p-8 rounded-t-lg" src={{ asset('storage/' . $book->cover_image) }} alt="product image" />
-                        </a>
-                        <div class="px-5 pb-5">
-                            <a href="/satu">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $book->title }}</h5>
-                            </a>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">Rp. {{ $book->price }}</span>
-                                <button data-modal-target="book-detail-modal" data-modal-toggle="book-detail-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                                    View Book Details
-                                </button>
-                                <a href="{{ $book->link }}" target="blank" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                            <div class="px-5 pb-5">
+                                <a href="/satu">
+                                    <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $book->title }}</h5>
+                                </a>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-3xl font-bold text-gray-900 dark:text-white">Rp. {{ $book->price }}</span>
+                                    <a href="{{ $book->link }}" target="blank" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                </a>
                 @endforeach
             @else
                 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -525,70 +522,6 @@
     </section>
 {{-- katalog --}}
 
-{{-- modal detail buku --}}
-
-    
-    <!-- Book Detail Modal -->
-    <div id="book-detail-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-4 w-full max-w-2xl max-h-full">
-            <!-- Modal content -->
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                <!-- Modal header -->
-                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                        Book Details
-                    </h3>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="book-detail-modal">
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button>
-                </div>
-                <!-- Modal body -->
-                <div class="p-4 md:p-5 space-y-4">
-                    <div class="text-center">
-                        <img id="book-cover" src="" alt="Book Cover" class="w-40 h-60 mx-auto rounded-lg shadow-md">
-                    </div>
-                    <p class="text-base font-medium text-gray-900 dark:text-white">
-                        <span class="font-semibold">Judul:</span> <span id="book-title">Lorem Ipsum</span>
-                    </p>
-                    <p class="text-base font-medium text-gray-900 dark:text-white">
-                        <span class="font-semibold">Penulis:</span> <span id="book-author">John Doe</span>
-                    </p>
-                    <p class="text-base font-medium text-gray-900 dark:text-white">
-                        <span class="font-semibold">Deskripsi:</span>
-                        <span id="book-description">This is a detailed description of the book.</span>
-                    </p>
-                    <p class="text-base font-medium text-gray-900 dark:text-white">
-                        <span class="font-semibold">Stok:</span> <span id="book-stock">Available</span>
-                    </p>
-                    <p class="text-base font-medium text-gray-900 dark:text-white">
-                        <span class="font-semibold">Kategori:</span> <span id="book-category">Fiction</span>
-                    </p>
-                    <p class="text-base font-medium text-gray-900 dark:text-white">
-                        <span class="font-semibold">Penerbit:</span> <span id="book-publisher">ABC Publishing</span>
-                    </p>
-                    <p class="text-base font-medium text-gray-900 dark:text-white">
-                        <span class="font-semibold">Tahun Terbit:</span> <span id="book-year">2023</span>
-                    </p>
-                    <p class="text-base font-medium text-gray-900 dark:text-white">
-                        <span class="font-semibold">ISBN:</span> <span id="book-isbn">978-3-16-148410-0</span>
-                    </p>
-                    <a id="book-link" href="#" target="_blank" class="text-blue-700 hover:underline dark:text-blue-400">
-                        Purchase Book
-                    </a>
-                </div>
-                <!-- Modal footer -->
-                <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                    <button data-modal-hide="book-detail-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-{{-- modal detail buku --}}
-
-    
 {{-- about --}}
     {{-- <section class="bg-white dark:bg-gray-900">
         <h1 class="mb-1 mt-10 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white text-center">Profil</h1>
