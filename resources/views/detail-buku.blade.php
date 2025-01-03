@@ -5,40 +5,40 @@
 @section('content')
 <section class="bg-white dark:bg-gray-900 py-12">
     <div class="container px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-4 md:grid-cols-3">
             <!-- Book Cover -->
-            <div class="col-span-1 flex justify-center items-center">
-                <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-1/2 md:w-full h-auto object-cover">
+            <div class="flex justify-center items-center">
+                <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
             </div>
 
             <!-- Book Details -->
-            <div class="col-span-3 flex flex-col justify-center">
+            <div class="flex flex-col justify-center">
                 <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{{ $book->title }}</h1>
                 <table class="table-auto text-gray-700 dark:text-gray-400">
                     <tbody>
                         <tr>
                             <td class="font-semibold pr-4">Penulis</td>
-                            <td>: {{ $book->author }}</td>
+                            <td>:{{ $book->author }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">Penerbit</td>
-                            <td>: {{ $book->publisher }}</td>
+                            <td>:{{ $book->publisher }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">Tahun Terbit</td>
-                            <td>: {{ $book->year }}</td>
+                            <td>:{{ $book->year }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">Kategori</td>
-                            <td>: {{ $book->category }}</td>
+                            <td>:{{ $book->category }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">ISBN</td>
-                            <td>: {{ $book->isbn }}</td>
+                            <td>:{{ $book->isbn }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">Stok</td>
-                            <td>: {{ $book->stock > 0 ? 'Tersedia' : 'Habis' }}</td>
+                            <td>:{{ $book->stock > 0 ? 'Tersedia' : 'Habis' }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -63,5 +63,4 @@
         </div>
     </div>
 </section>
-
 @endsection
