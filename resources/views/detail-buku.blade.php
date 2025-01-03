@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="bg-white dark:bg-gray-900 py-12">
-    <div class="container mx-auto px-4">
+    <div class="container px-4">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
             <!-- Book Cover -->
             <div class="flex justify-center items-center">
