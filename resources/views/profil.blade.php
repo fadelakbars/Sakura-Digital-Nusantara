@@ -20,49 +20,57 @@
 {{-- about --}}
 
 {{-- struktur organisasi --}}
-    <section class="py-12 bg-gray-100">
-        <div class="container mx-auto px-4">
-        <!-- Root Level -->
-        <div class="text-center mb-8">
-            <div class="inline-block bg-blue-500 text-white font-bold rounded-md px-6 py-4">
+<section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="relative">
+        <!-- Timeline Line -->
+        <div class="absolute w-1 bg-gray-300 h-full left-1/2 transform -translate-x-1/2"></div>
+  
+        <!-- CV. SDN -->
+        <div class="flex flex-col items-center mb-8">
+          <div class="bg-blue-500 text-white font-bold rounded-md px-6 py-4 relative z-10">
             CV. SDN
-            </div>
+          </div>
+          <div class="w-4 h-4 bg-gray-300 rounded-full relative z-10"></div>
         </div>
-    
+  
         <!-- Direktur -->
-        <div class="text-center mb-8">
-            <div class="inline-block bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4">
+        <div class="flex flex-col items-center mb-8">
+          <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 relative z-10">
             Direktur
-            </div>
+          </div>
+          <div class="w-4 h-4 bg-gray-300 rounded-full relative z-10"></div>
         </div>
-    
+  
         <!-- Komisaris dan CEO -->
-        <div class="flex justify-center gap-4 mb-8">
-            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 w-48 text-center">
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
             Komisaris
-            </div>
-            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 w-48 text-center">
+          </div>
+          <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
             CEO
-            </div>
+          </div>
         </div>
-    
+  
         <!-- Divisions -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
             Divisi Publisher
-            </div>
-            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
+          </div>
+          <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
             Divisi Journal
-            </div>
-            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
+          </div>
+          <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
             Application & Data Center
-            </div>
-            <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
+          </div>
+          <div class="bg-white shadow-md text-gray-700 font-bold rounded-md px-6 py-4 text-center">
             IT Development
-            </div>
+          </div>
         </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </section>
+  
 {{-- struktur organisasi --}}
 
 @endsection
