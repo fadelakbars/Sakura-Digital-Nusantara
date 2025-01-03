@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href={{ asset('img/SWS-Logo.png') }}>
-    <link rel="stylesheet" href={{ asset('css/style.css') }}>
+    {{-- <link rel="stylesheet" href={{ asset('css/style.css') }}> --}}
     <title>@yield('title')</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
@@ -64,7 +64,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <a href={{ url('/journal', []) }} class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                             <div class="font-semibold">Journal</div>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Publisher Paper</span>
                         </a>
@@ -163,7 +163,7 @@
                             <a href={{ url('url', []) }} class="hover:underline ">Application & Data Center</a>
                         </li>
                         <li class="mb-4">
-                            <a href={{ url('url', []) }} class="hover:underline ">Journal</a>
+                            <a href={{ url('/journal', []) }} class="hover:underline ">Journal</a>
                         </li>
                         <li class="mb-4">
                             <a href={{ url('url', []) }} class="hover:underline ">CAT</a>

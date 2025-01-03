@@ -12,7 +12,7 @@ class HomeViewController extends Controller
     {
         $books = Book::all();
 
-        $testimonis = Testimoni::all();
+        $testimonis = Testimoni::orderBy('created_at', 'desc')->take(4)->get();
 
         return view('home', [
             'books' => $books,
