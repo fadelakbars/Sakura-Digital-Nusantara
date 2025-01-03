@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeViewController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PublisherViewController;
 use App\Http\Controllers\PublishOrderController;
+use App\Http\Controllers\ViewJournalController;
 use Illuminate\Support\Facades\Route;
 
 // HOME
@@ -13,6 +14,8 @@ Route::get('/', [HomeViewController::class, 'index']);
 // PROFIL
 Route::view('/profil', 'profil');
 // END PROFIL
+
+Route::get('/jounal', [ViewJournalController::class, 'index']);
 
 // PUBLISHER  
 Route::get('/publisher', [PublisherViewController::class, 'index']);
