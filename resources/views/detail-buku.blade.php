@@ -5,14 +5,15 @@
 @section('content')
 <section class="bg-white dark:bg-gray-900 py-12">
     <div class="container mx-auto px-4">
-        <div class="flex flex-wrap gap-10">
-            <!-- Book Cover -->
-            {{-- <div class="flex justify-center items-center"> --}}
-            {{-- </div> --}}
-            <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
+        <div class="flex flex-wrap md:flex-nowrap gap-10">
 
+            {{-- <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover"> --}}
+
+            <div class="w-full md:w-auto flex-shrink-0">
+                <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
+            </div>
             <!-- Book Details -->
-            <div class="">
+            <div class="flex-grow">
                 <h1 class="text-3xl font-bold text-gray-900 dark:text-white">{{ $book->title }}</h1>
 
                 <!-- Table for Book Details -->
