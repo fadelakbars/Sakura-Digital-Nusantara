@@ -5,18 +5,18 @@
 @section('content')
 <section class="bg-white dark:bg-gray-900 py-12">
     <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="flex flex-col lg:flex-row gap-10">
             <!-- Book Cover -->
-            <div class="flex justify-center items-center">
-                <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
+            <div class="flex justify-center items-center lg:w-1/3">
+                <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-full lg:w-64 h-auto object-cover">
             </div>
 
             <!-- Book Details -->
-            <div class="flex flex-col justify-center space-y-4">
-                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">{{ $book->title }}</h1>
+            <div class="flex flex-col justify-center lg:w-2/3">
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">{{ $book->title }}</h1>
 
                 <!-- Table for Book Details -->
-                <table class="table-auto text-gray-700 dark:text-gray-400">
+                <table class="table-auto text-gray-700 dark:text-gray-400 mb-6">
                     <tbody>
                         <tr>
                             <td class="font-semibold pr-4">Deskripsi</td>
@@ -50,17 +50,17 @@
                 </table>
 
                 <!-- Purchase Links -->
-                <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+                <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="{{ $book->link }}" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                         <img src="{{ asset('img/shopee.png') }}" alt="Shopee" class="me-3 w-10 h-10">
-                        <div class="text-left rtl:text-right">
+                        <div class="text-left">
                             <div class="mb-1 text-xs">Belanja di</div>
                             <div class="-mt-1 font-sans text-sm font-semibold">Shopee</div>
                         </div>
                     </a>
                     <a href="{{ $book->tokopedia }}" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                         <img src="{{ asset('img/Tokopedia_Mascot.png') }}" alt="Tokopedia" class="me-3 w-10 h-10">
-                        <div class="text-left rtl:text-right">
+                        <div class="text-left">
                             <div class="mb-1 text-xs">Belanja di</div>
                             <div class="-mt-1 font-sans text-sm font-semibold">Tokopedia</div>
                         </div>
