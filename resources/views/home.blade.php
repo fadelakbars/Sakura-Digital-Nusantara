@@ -267,7 +267,7 @@
                                 <p class="my-4">{{ $testimoni->testimonial_text }}</p>
                             </blockquote>
                             <figcaption class="flex items-center justify-center ">
-                                <img class="rounded-full w-9 h-9" src={{ asset('storage/' . {{ $testimoni->profile_image }}) }} alt="profile picture">
+                                <img class="rounded-full w-9 h-9" src={{ asset('storage/' . $testimoni->profile_image) }} alt="profile picture">
                                 <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
                                     <div>{{ $testimoni->customer_name }}</div>
                                     <div class="text-sm text-gray-500 dark:text-gray-400 ">{{ $testimoni->job_title }}</div>
