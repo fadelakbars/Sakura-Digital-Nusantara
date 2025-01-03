@@ -15,7 +15,7 @@ Route::get('/', [HomeViewController::class, 'index']);
 Route::view('/profil', 'profil');
 // END PROFIL
 
-Route::get('/jounal', [ViewJournalController::class, 'index']);
+Route::get('/journal', [ViewJournalController::class, 'index']);
 
 // PUBLISHER  
 Route::get('/publisher', [PublisherViewController::class, 'index']);

@@ -4,6 +4,6 @@
 
 @section('content')
 
-
+<h1>halaman jurnal</h1>
 
 @endsection
