@@ -12,7 +12,7 @@
             </div>
 
             <!-- Book Details -->
-            <div class="flex flex-col justify-center">
+            <div class="justify-center">
                 <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{{ $book->title }}</h1>
                 <table class="table-auto text-gray-700 dark:text-gray-400">
                     <tbody>
