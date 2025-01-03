@@ -29,6 +29,5 @@ class Testimoni extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'service' => 'decimal:2',
     ];
 }
