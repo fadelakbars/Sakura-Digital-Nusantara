@@ -257,6 +257,7 @@
 
 {{-- testimoni --}}
     <section>
+        <h1 class="mb-1 mt-10 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white text-center">Testimoni</h1>
         <div class="flex flex-wrap p-10 ">
             <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800">
                 @if (isset($testimonis))
