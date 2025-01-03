@@ -18,6 +18,10 @@ class Journal extends Model
         'journalcname',
         'description',
         'link',
+        'pissn',
+        'link_pissn',
+        'eissn',
+        'link_eissn',
         'courrent_issue',
         'image',
     ];
