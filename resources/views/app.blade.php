@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href={{ asset('img/SWS-Logo.png') }}>
+    <link rel="stylesheet" href={{ asset('css/style.css') }}>
     <title>@yield('title')</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
@@ -39,7 +40,7 @@
                         <a href="#" class="block py-2 px-3 {{ request()->is('/produk') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Produk</a>
                     </li>
                     <li>
-                        <a href={{ url('/profil', []) }} class="block py-2 px-3 {{ request()->is('/profil') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Profile</a>
+                        <a href={{ url('/profil', []) }} class="block py-2 px-3 {{ request()->is('/profil') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Profil</a>
                     </li>
                     <li>
                         <a href={{ url('/admin/login') }} class="block py-2 px-3 {{ request()->is('/login') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
@@ -148,7 +149,7 @@
                             <a href={{ url('/artikel-blog', []) }} class="hover:underline">Produk</a>
                         </li>
                         <li class="mb-4">
-                            <a href={{ url('/artikel-blog', []) }} class="hover:underline">profil</a>
+                            <a href={{ url('/profil', []) }} class="hover:underline">profil</a>
                         </li>
                     </ul>
                 </div>
@@ -156,13 +157,13 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Layanan</h2>
                     <ul class="text-gray-500 dark:text-gray-400 font-medium">
                         <li class="mb-4">
-                            <a href={{ url('url', []) }} class="hover:underline ">Sakura Publisher</a>
+                            <a href={{ url('/publisher', []) }} class="hover:underline ">Sakura Publisher</a>
                         </li>
                         <li class="mb-4">
-                            <a href={{ url('url', []) }} class="hover:underline ">Software House Sakura</a>
+                            <a href={{ url('url', []) }} class="hover:underline ">Application & Data Center</a>
                         </li>
                         <li class="mb-4">
-                            <a href={{ url('url', []) }} class="hover:underline ">IoT Development</a>
+                            <a href={{ url('url', []) }} class="hover:underline ">Journal</a>
                         </li>
                         <li class="mb-4">
                             <a href={{ url('url', []) }} class="hover:underline ">CAT</a>
@@ -171,7 +172,7 @@
                             <a href={{ url('url', []) }} class="hover:underline ">E-Course</a>
                         </li>
                         <li class="mb-4">
-                            <a href={{ url('url', []) }} class="hover:underline ">Proofreading</a>
+                            <a href={{ url('url', []) }} class="hover:underline ">IT Development</a>
                         </li>
                     </ul>
                 </div>

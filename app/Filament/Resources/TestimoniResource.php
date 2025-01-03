@@ -24,7 +24,9 @@ class TestimoniResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-right';
     
     protected static ?string $navigationLabel = 'Testimoni';
-    // protected static ?string $navigationGroup = 'Publisher';
+
+    protected static ?string $navigationGroup = 'Home';
+    
     public static function form(Form $form): Form
     {
         return $form
