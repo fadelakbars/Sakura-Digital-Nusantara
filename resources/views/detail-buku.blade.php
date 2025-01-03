@@ -48,14 +48,14 @@
                 </table>
 
                 <div class="items-center mt-10 justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
-                    <a href={{ $book->link }} class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                    <a href="{{ $book->link }}" target="blank" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                         <img src={{ asset('img/shopee.png') }} alt="Tokopedia Mascot" class="me-3 w-10 h-10">
                         <div class="text-left rtl:text-right">
                             <div class="mb-1 text-xs">Dapatkan di</div>
                             <div class="-mt-1 font-sans text-sm font-semibold">Shopee</div>
                         </div>
                     </a>
-                    <a href={{ $book->tokopedia }} class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                    <a href="{{ $book->tokopedia }}" target="blank" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                         <img src={{ asset('img/Tokopedia_Mascot.png') }} alt="Tokopedia Mascot" class="me-3 w-10 h-10">
                         <div class="text-left rtl:text-right">
                             <div class="mb-1 text-xs">Dapatkan di</div>
