@@ -5,14 +5,14 @@
 @section('content')
 <section class="bg-white dark:bg-gray-900 py-12">
     <div class="container px-4">
-        <div class="grid grid-cols-2 gap-2">
+        <div class="grid grid-cols-3 gap-2">
             <!-- Book Cover -->
-            <div class="flex justify-center items-center">
+            <div class="col-span-1 justify-center items-center">
                 <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
             </div>
 
             <!-- Book Details -->
-            <div class="flex flex-col justify-center">
+            <div class="col-span-2 justify-center">
                 <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{{ $book->title }}</h1>
                 <table class="table-auto text-gray-700 dark:text-gray-400 w-full">
                     <tbody>
