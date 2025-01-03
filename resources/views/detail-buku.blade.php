@@ -18,33 +18,27 @@
                     <tbody>
                         <tr>
                             <td class="font-semibold pr-4">Deskripsi</td>
-                            <td>:</td>
-                            <td>{{ $book->description }}</td>
+                            <td>: {{ $book->description }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">Penulis</td>
-                            <td>:</td>
-                            <td>{{ $book->author }}</td>
+                            <td>: {{ $book->author }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">Penerbit</td>
-                            <td>:</td>
-                            <td>{{ $book->publisher }}</td>
+                            <td>: {{ $book->publisher }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">Tahun Terbit</td>
-                            <td>:</td>
-                            <td>{{ $book->year }}</td>
+                            <td>: {{ $book->year }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">Kategori</td>
-                            <td>:</td>
-                            <td>{{ $book->category }}</td>
+                            <td>: {{ $book->category }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">ISBN</td>
-                            <td>:</td>
-                            <td>{{ $book->isbn }}</td>
+                            <td>: {{ $book->isbn }}</td>
                         </tr>
                         <tr>
                             <td class="font-semibold pr-4">Stok</td>
