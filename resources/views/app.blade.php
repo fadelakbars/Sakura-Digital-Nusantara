@@ -51,19 +51,19 @@
                 <ul>
                     <li>
                         <a href="/publisher" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <div class="font-semibold">Sakura Publihser</div>
+                            <div class="font-semibold">Publihser</div>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Penerbitan & pemasaran buku, jurnal, pengurusan HKI</span>
                         </a>
                     </li>
                     <li>
                         <a href="/software-house-sakura" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <div class="font-semibold">Software House Sakura</div>
+                            <div class="font-semibold">Application Developmetn & Data Center</div>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Web & mobile development, hosting, publish app ke playstore</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <div class="font-semibold">IoT Development</div>
+                            <div class="font-semibold">Journal</div>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Pebuatan perangkan IoT</span>
                         </a>
                     </li>
@@ -83,7 +83,7 @@
                     </li>
                     <li>
                         <a href="#" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <div class="font-semibold">Tunitin & Parafrase</div>
+                            <div class="font-semibold">IT Development</div>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Jasa tunitin dan parafrase</span>
                         </a>
                     </li>
