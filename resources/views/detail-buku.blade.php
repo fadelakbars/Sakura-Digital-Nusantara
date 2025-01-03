@@ -7,7 +7,7 @@
     <div class="container px-4">
         <div class="grid grid-cols-3 gap-2">
             <!-- Book Cover -->
-            <div class="col-span-1 justify-center items-center">
+            <div class="col-span-1 flex justify-center items-center">
                 <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="rounded-lg shadow-lg w-64 h-96 object-cover">
             </div>
 
