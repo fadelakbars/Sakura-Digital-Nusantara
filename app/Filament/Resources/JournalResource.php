@@ -35,17 +35,27 @@ class JournalResource extends Resource
                 TextInput::make('journalcname')
                     ->label("Nama Jurnal")
                     ->required(),
-                // TextInput::make('description')
-                //     ->label("Deskripsi")
-                //     ->required(),
                 TextInput::make('link')
                     ->label("Link Jurnal")
+                    ->required(),
+                TextInput::make('pissn')
+                    ->label("ISSN")
+                    ->required(),
+                TextInput::make('link_pissn')
+                    ->label("Link ISSN")
+                    ->required(),
+                TextInput::make('eissn')
+                    ->label("Online ISSN")
+                    ->required(),
+                TextInput::make('link_eissn')
+                    ->label("Link EISSN")
                     ->required(),
                 TextInput::make('courrent_issue')
                     ->label("Link Current Issue")
                     ->required(),
                 FileUpload::make('image')
                     ->label("Cover Jurnal")
+                    ->maxSize(1000)
                     ->required(),
                 MarkdownEditor::make('description')
                     ->label("Deskripsi")
@@ -77,6 +87,14 @@ class JournalResource extends Resource
                     ->label('Cover Jurnal'),
                 TextColumn::make('journalcname')
                     ->label('Nama Jurnal')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('pissn')
+                    ->label('ISSN')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('eissn')
+                    ->label('EISSN')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('link')
