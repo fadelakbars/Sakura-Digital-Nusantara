@@ -50,6 +50,7 @@ class JournalResource extends Resource
                 MarkdownEditor::make('description')
                     ->label("Deskripsi")
                     ->required()
+                    ->columnSpanFull()
                     ->toolbarButtons([
                         'attachFiles',
                         'blockquote',
