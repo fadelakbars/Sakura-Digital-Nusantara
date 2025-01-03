@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="bg-white dark:bg-gray-900 py-12">
-    <div class="container px-4">
+    <div class="container px-4 mt-10 mb-10">
         <div class="grid grid-cols-3 gap-2">
             <!-- Book Cover -->
             <div class="col-span-1 flex justify-center items-center">
@@ -55,7 +55,7 @@
                             <div class="-mt-1 font-sans text-sm font-semibold">Shopee</div>
                         </div>
                     </a>
-                    <a href={{ $book->link }} class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                    <a href={{ $book->tokopedia }} class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                         <img src={{ asset('img/Tokopedia_Mascot.png') }} alt="Tokopedia Mascot" class="me-3 w-10 h-10">
                         <div class="text-left rtl:text-right">
                             <div class="mb-1 text-xs">Dapatkan di</div>
