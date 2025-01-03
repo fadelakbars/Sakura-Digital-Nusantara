@@ -9,6 +9,7 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body>
+{{-- navbar --}}
     <nav class="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900">
         <div id="up" class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
             <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -64,7 +65,7 @@
                     <li>
                         <a href="#" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                             <div class="font-semibold">Journal</div>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Pebuatan perangkan IoT</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Publisher Paper</span>
                         </a>
                     </li>
                 </ul>
@@ -84,13 +85,14 @@
                     <li>
                         <a href="#" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                             <div class="font-semibold">IT Development</div>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Jasa tunitin dan parafrase</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Pembuatan perangkat IoT</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+{{-- navbar --}}
     
     @include('sweetalert::alert')
     
