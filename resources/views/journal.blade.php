@@ -72,7 +72,10 @@
                     ISSN
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Status
+                    Online ISSN
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Current Issue
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Action
@@ -82,7 +85,7 @@
         <tbody>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                    <img class="w-10 rounded-full" src={{ asset('img/jupiter.png') }} alt="Jese image">
+                    <img class="w-10" src={{ asset('img/jupiter.png') }} alt="Jese image">
                     <div class="ps-3">
                         <div class="text-base font-semibold">JUPITER</div>
                         <div class="font-normal text-gray-500">Jurnal Pendidikan Terapan</div>
@@ -96,6 +99,7 @@
                 </td>
                 <td class="px-6 py-4">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Journal</a>
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Current Issue</a>
                 </td>
             </tr>
         </tbody>
