@@ -84,22 +84,22 @@
                 @foreach ($jurnals as $item)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                            <img class="w-10" src={{ asset('storage/' . $item->) }} alt="Jese image">
+                            <img class="w-10" src={{ asset('storage/' . $item->image) }} alt="Jese image">
                             <div class="ps-3">
-                                <div class="text-base font-semibold">{{ $item-> }}</div>
-                                <div class="font-normal text-gray-500">{{ $item-> }}</div>
+                                <div class="text-base font-semibold">{{ $item->journalcname }}</div>
+                                <div class="font-normal text-gray-500">{{ $item->kepanjangan }}</div>
                             </div>  
                         </th>
                         <td class="px-6 py-4">
-                            <a href="{{ $item-> }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ $item-> }}</a>
+                            <a href="{{ $item->link_pissn }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ $item->pissn }}</a>
                         </td>
                         <td class="px-6 py-4">
-                            <a href="{{ $item-> }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ $item-> }}</a>
+                            <a href="{{ $item->link_eissn }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ $item->eissn }}</a>
                         </td>
                         <td class="px-6 py-4">
-                            <a href="{{ $item-> }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ $item-> }}</a>
+                            <a href="{{ $item->link }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Journal</a>
                             <SPan> | </SPan>
-                            <a href="{{ $item-> }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ $item-> }}</a>
+                            <a href="{{ $item->courrent_issue }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Current Issue</a>
                         </td>
                     </tr>        
                 @endforeach
