@@ -21,8 +21,6 @@
 {{-- tabel daftar jurnal --}}
 <section class="bg-white dark:bg-gray-900">
     <div class="p-20 justify-center">
-        
-        
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <div class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
@@ -64,7 +62,7 @@
                             <a href="{{ $item->link_pissn }}" class="font-medium text-black dark:text-blue-500 hover:underline">{{ $item->pissn }}</a>
                         </td>
                         <td class="px-6 py-4">
-                            <a href="{{ $item->link_eissn }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ $item->eissn }}</a>
+                            <a href="{{ $item->link_eissn }}" class="font-medium text-black dark:text-blue-500 hover:underline">{{ $item->eissn }}</a>
                         </td>
                         <td class="px-6 py-4">
                             <a href="{{ $item->link }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Journal</a>
@@ -105,5 +103,24 @@
 
 </section>
 {{-- tabel daftar jurnal --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById("table-search-users");
+        const tableRows = document.querySelectorAll("tbody tr");
+
+        searchInput.addEventListener("input", function(e) {
+            const searchQuery = e.target.value.toLowerCase();
+
+            tableRows.forEach(row => {
+                const rowText = row.textContent.toLowerCase();
+                if (rowText.includes(searchQuery)) {
+                    row.style.display = ""; // Tampilkan baris jika cocok
+                } else {
+                    row.style.display = "none"; // Sembunyikan baris jika tidak cocok
+                }
+            });
+        });
+    });
+</script>
 
 @endsection
