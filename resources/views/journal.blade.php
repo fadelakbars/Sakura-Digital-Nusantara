@@ -61,7 +61,7 @@
                             </div>  
                         </th>
                         <td class="px-6 py-4">
-                            <a href="{{ $item->link_pissn }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ $item->pissn }}</a>
+                            <a href="{{ $item->link_pissn }}" class="font-medium text-black dark:text-blue-500 hover:underline">{{ $item->pissn }}</a>
                         </td>
                         <td class="px-6 py-4">
                             <a href="{{ $item->link_eissn }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{ $item->eissn }}</a>
