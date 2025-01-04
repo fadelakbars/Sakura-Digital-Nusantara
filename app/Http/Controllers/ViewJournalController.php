@@ -12,6 +12,11 @@ class ViewJournalController extends Controller
 
         $jurnals = Journal::all();
 
-        return view('journal', ['jurnals' => $jurnals]);
+        $jumlahjurnal = Journal::count();
+
+        return view('journal', [
+            'jurnals' => $jurnals,
+            'jumlahjurnal' => $jumlahjurnal,
+        ]);
     }
 }
