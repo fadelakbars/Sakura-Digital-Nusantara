@@ -75,9 +75,6 @@
                     Online ISSN
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Current Issue
-                </th>
-                <th scope="col" class="px-6 py-3">
                     Action
                 </th>
             </tr>
@@ -99,6 +96,7 @@
                 </td>
                 <td class="px-6 py-4">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Journal</a>
+                    <SPan> | </SPan>
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Current Issue</a>
                 </td>
             </tr>
