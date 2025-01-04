@@ -20,7 +20,7 @@
 
 {{-- tabel daftar jurnal --}}
 <section class="bg-white dark:bg-gray-900">
-    <div class="py-5 px-20 justify-center">
+    <div class="px-20 justify-center">
         
         
 
