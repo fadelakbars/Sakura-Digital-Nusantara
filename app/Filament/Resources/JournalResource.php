@@ -33,7 +33,10 @@ class JournalResource extends Resource
         return $form
             ->schema([
                 TextInput::make('journalcname')
-                    ->label("Nama Jurnal")
+                    ->label("Nama Jurnal (singkatan)")
+                    ->required(),
+                TextInput::make('kepanjangan')
+                    ->label("Nama Jurnal (kepanjangan)")
                     ->required(),
                 TextInput::make('link')
                     ->label("Link Jurnal")

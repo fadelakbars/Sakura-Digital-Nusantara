@@ -16,6 +16,7 @@ class Journal extends Model
      */
     protected $fillable = [
         'journalcname',
+        'kepanjangan',
         'description',
         'link',
         'pissn',
