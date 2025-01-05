@@ -17,6 +17,6 @@ class ListPriceRanges extends ListRecords
         ];
     }
 
-    protected static ?string $title = 'Daftar Paket Publikasi Buku'; 
+    protected static ?string $title = 'Daftar Paket Penerbitan Buku'; 
 
 }

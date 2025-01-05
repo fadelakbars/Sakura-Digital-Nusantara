@@ -10,7 +10,7 @@ class CreatePriceRange extends CreateRecord
 {
     protected static string $resource = PriceRangeResource::class;
 
-    protected static ?string $title = 'Tambah Paket Publikasi Buku'; 
+    protected static ?string $title = 'Tambah Paket Penerbitan Buku'; 
 
     protected function getRedirectUrl(): string
     {

@@ -17,7 +17,7 @@ class EditPriceRange extends EditRecord
         ];
     }
 
-    protected static ?string $title = 'Edit Paket Publikasi Buku'; 
+    protected static ?string $title = 'Edit Paket Penerbitan Buku'; 
 
     protected function getRedirectUrl(): string
     {

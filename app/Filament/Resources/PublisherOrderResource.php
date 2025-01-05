@@ -17,7 +17,11 @@ class PublisherOrderResource extends Resource
 {
     protected static ?string $model = PublisherOrder::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
+
+    protected static ?string $navigationLabel = 'Paket Penerbitan Buku';
+
+    protected static ?string $navigationGroup = 'Publisher';
 
     public static function form(Form $form): Form
     {
