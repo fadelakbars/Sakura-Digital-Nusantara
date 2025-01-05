@@ -29,4 +29,10 @@ class PriceRange extends Model
         'id' => 'integer',
         'price' => 'decimal:2',
     ];
+
+    public function orders()
+{
+    return $this->hasMany(PublisherOrder::class, 'price_range_id');
+}
+
 }

@@ -28,4 +28,10 @@ class PrintQuantity extends Model
         'id' => 'integer',
         'price_per_unit' => 'decimal:2',
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(PublisherOrder::class, 'print_quantity_id');
+    }
+
 }

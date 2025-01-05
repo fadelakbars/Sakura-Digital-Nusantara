@@ -6,18 +6,22 @@ use App\Filament\Resources\PublisherOrderResource\Pages;
 use App\Filament\Resources\PublisherOrderResource\RelationManagers;
 use App\Models\PublisherOrder;
 use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use PhpParser\Node\Stmt\Label;
 
 class PublisherOrderResource extends Resource
 {
     protected static ?string $model = PublisherOrder::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
+    protected static ?string $navigationIcon = 'heroicon-o-heroicon-o-book-open';
 
     protected static ?string $navigationLabel = 'Orderan Buku';
 
@@ -27,7 +31,59 @@ class PublisherOrderResource extends Resource
     {
         return $form
             ->schema([
-                
+                Forms\Components\Select::make('status')
+                    ->options([
+                        'Pending' => 'Pending',
+                        'In Progress' => 'In Progress',
+                        'Completed' => 'Completed',
+                        'Revised' => 'Revised',
+                    ])
+                    ->default('pending')
+                    ->label('Status'),
+                TextInput::make('client_name')
+                    ->required()
+                    ->label('Nama Pelanggan'),
+                TextInput::make('book_title')
+                    ->required()
+                    ->label('Judul Buku'),
+                TextInput::make('package_id')
+                    ->relationship('package', 'package_name')
+                    ->label('layanan'),
+                TextInput::make('price_range_id')
+                    ->relationship('priceRange', 'price')
+                    ->label('Paket Penerbitan'),
+                TextInput::make('print_quantity_id')
+                    ->relationship('printQuantity', 'quantity')
+                    ->label('Paket Cetakan'),
+                TextInput::make('client_email')
+                    ->email()
+                    ->required()
+                    ->label('Email Pelanggan'),
+                TextInput::make('client_phone')
+                    ->required()
+                    ->label('Whatsapp'),
+                Select::make('client_gender')
+                    ->options(['Pria' => 'Pria', 'Wanita' => 'Wanita'])
+                    ->required()
+                    ->label('Gender'),
+                DatePicker::make('client_birthdate')
+                    ->required()
+                    ->label('Tanggal Lahir'),
+                TextInput::make('client_job_title')
+                    ->required()
+                    ->label('Pekerjaan'),
+                TextInput::make('client_institution')
+                    ->required()
+                    ->label('Institusi'),
+                TextInput::make('manuscript_path'),
+                TextInput::make('invoice_number')
+                    ->nullable()
+                    ->label('Nomor Invoice'),
+                TextInput::make('invoice_path')
+                    ->nullable(),
+                TextInput::make('total_price')
+                    ->label('Total Harga'),
+
             ]);
     }
 
@@ -36,17 +92,51 @@ class PublisherOrderResource extends Resource
         return $table
             ->columns([
                 //
+                Tables\Columns\TextColumn::make('client_name')->label('Nama Pelanggan'),
+                Tables\Columns\TextColumn::make('book_title')->label('Judul Buku'),
+                Tables\Columns\TextColumn::make('package.package_name')->label('Layanan'),
+                Tables\Columns\TextColumn::make('status')
+                ->label('Status')
+                ->badge()
+                ->color(function(string $state) : string{
+                    return match($state){
+                        'Pending' => 'warning',
+                        'In Progress' => 'primary',
+                        'Completed' => 'success',
+                        'Revised' => 'danger',
+                    };
+                }),
+                Tables\Columns\TextColumn::make('total_price')->label('Total Harga')->money('IDR'),
+                Tables\Columns\IconColumn::make('client_phone')
+                    ->label('Whatsapp')
+                    ->getStateUsing(fn() => true) 
+                    ->icon(fn(bool $state): string => 'heroicon-o-phone') 
+                    ->color('success')
+                    ->url(fn($record) => 'https://wa.me/' . preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $record->phone)))
+                    ->openUrlInNewTab(), 
+                Tables\Columns\IconColumn::make('')
+                    ->label('Download Invoice')
+                    ->getStateUsing(fn() => true) 
+                    ->icon(fn(bool $state): string => 'heroicon-o-arrow-down-on-square') 
+                    ->color('info')
+                    ->url(fn($record) => route('invoice.download', ['id' => $record->id]))
             ])
             ->filters([
                 //
+                Tables\Filters\SelectFilter::make('status')
+                    ->options([
+                        'Pending' => 'Pending',
+                        'In Progress' => 'In Progress',
+                        'Completed' => 'Completed',
+                        'Revised' => 'Revised',
+                    ])
+                    ->label('Filter by Status'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                Tables\Actions\DeleteBulkAction::make()->label('Delete Selected'),
             ]);
     }
 

@@ -43,4 +43,25 @@ class PublisherOrder extends Model
         'client_birthdate' => 'date',
         'total_price' => 'decimal:2',
     ];
+
+    public function package()
+    {
+        return $this->belongsTo(PublisherPackage::class, 'package_id');
+    }
+
+    /**
+     * Get the price range associated with the order.
+     */
+    public function priceRange()
+    {
+        return $this->belongsTo(PriceRange::class, 'price_range_id');
+    }
+
+    /**
+     * Get the print quantity associated with the order.
+     */
+    public function printQuantity()
+    {
+        return $this->belongsTo(PrintQuantity::class, 'print_quantity_id');
+    }
 }

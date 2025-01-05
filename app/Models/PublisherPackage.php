@@ -29,4 +29,9 @@ class PublisherPackage extends Model
         'id' => 'integer',
         'base_price' => 'decimal:2',
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(PublisherOrder::class, 'package_id');
+    }
 }
