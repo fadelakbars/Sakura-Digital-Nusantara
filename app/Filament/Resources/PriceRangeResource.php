@@ -31,8 +31,7 @@ class PriceRangeResource extends Resource
             ->schema([
                 TextInput::make('page_rage')
                     ->label('Paket')
-                    ->required()
-                    ->numeric(),
+                    ->required(),
                 TextInput::make('price')
                     ->label('Harga')
                     ->required()
