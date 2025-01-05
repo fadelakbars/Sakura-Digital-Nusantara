@@ -16,4 +16,7 @@ class ListPublisherPackages extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Daftar Layanan'; 
+
 }

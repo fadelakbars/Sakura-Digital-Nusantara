@@ -23,7 +23,7 @@ class PriceRangeResource extends Resource
 
     protected static ?string $navigationLabel = 'Paket Penerbitan Buku';
 
-    protected static ?string $navigationGroup = 'Publisher';
+    protected static ?string $navigationGroup = 'Publisher Settings';
 
     public static function form(Form $form): Form
     {

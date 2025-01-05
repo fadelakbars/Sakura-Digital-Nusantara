@@ -16,4 +16,11 @@ class EditPublisherPackage extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Edit Layanan'; 
+
+    protected function getRedirectUrl(): string
+    {
+        return route('filament.admin.resources.publisher-packages.index');
+    }
 }

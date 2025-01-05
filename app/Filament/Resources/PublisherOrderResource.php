@@ -19,7 +19,7 @@ class PublisherOrderResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
 
-    protected static ?string $navigationLabel = 'Paket Penerbitan Buku';
+    protected static ?string $navigationLabel = 'Orderan Buku';
 
     protected static ?string $navigationGroup = 'Publisher';
 
@@ -27,7 +27,7 @@ class PublisherOrderResource extends Resource
     {
         return $form
             ->schema([
-                //
+                
             ]);
     }
 

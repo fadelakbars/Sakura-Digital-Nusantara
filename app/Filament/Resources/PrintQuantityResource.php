@@ -23,7 +23,7 @@ class PrintQuantityResource extends Resource
 
     protected static ?string $navigationLabel = 'Harga Per Cetakan';
 
-    protected static ?string $navigationGroup = 'Publisher';
+    protected static ?string $navigationGroup = 'Publisher Settings';
 
     public static function form(Form $form): Form
     {

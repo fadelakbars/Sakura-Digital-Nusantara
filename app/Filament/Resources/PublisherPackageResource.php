@@ -21,9 +21,9 @@ class PublisherPackageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
 
-    protected static ?string $navigationLabel = 'Layanan Publikasi';
+    protected static ?string $navigationLabel = 'Layanan';
 
-    protected static ?string $navigationGroup = 'Publisher';
+    protected static ?string $navigationGroup = 'Publisher Settings';
 
     public static function form(Form $form): Form
     {
@@ -32,9 +32,6 @@ class PublisherPackageResource extends Resource
                 TextInput::make('package_name')
                     ->label('Layanan')
                     ->required(),
-                // TextInput::make('description')
-                //     ->label('Deskripsi')
-                //     ->required(),
                 TextInput::make('base_price')
                     ->label('Harga'),
             ]);
