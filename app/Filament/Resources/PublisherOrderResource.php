@@ -46,15 +46,24 @@ class PublisherOrderResource extends Resource
                 TextInput::make('book_title')
                     ->required()
                     ->label('Judul Buku'),
-                TextInput::make('package_id')
-                    ->relationship('package', 'package_name')
-                    ->label('layanan'),
-                TextInput::make('price_range_id')
+
+                // RELASI TABEL
+                Forms\Components\Select::make('package_id')
+                    ->relationship('package', 'package_name') 
+                    ->searchable()  
+                    ->required(),
+
+                Select::make('price_range_id')
                     ->relationship('priceRange', 'price')
+                    ->searchable()  
                     ->label('Paket Penerbitan'),
-                TextInput::make('print_quantity_id')
+
+                Select::make('print_quantity_id')
                     ->relationship('printQuantity', 'quantity')
+                    ->searchable()  
                     ->label('Paket Cetakan'),
+                // END RELASI TABEL
+
                 TextInput::make('client_email')
                     ->email()
                     ->required()
