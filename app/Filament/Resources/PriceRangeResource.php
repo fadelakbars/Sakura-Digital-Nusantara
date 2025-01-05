@@ -29,12 +29,8 @@ class PriceRangeResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('min_pages')
-                    ->label('Minimal Halaman')
-                    ->required()
-                    ->numeric(),
-                TextInput::make('max_pages')
-                    ->label('Max Halaman')
+                TextInput::make('page_rage')
+                    ->label('Paket')
                     ->required()
                     ->numeric(),
                 TextInput::make('price')
@@ -48,12 +44,8 @@ class PriceRangeResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('min_pages')
-                    ->label('Minimal Halaman')
-                    ->sortable()
-                    ->searchable(),
-                TextColumn::make('max_pages')
-                    ->label('Maximal Halaman')
+                TextColumn::make('page_rage')
+                    ->label('Paket')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('price')

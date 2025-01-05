@@ -30,10 +30,10 @@ class PrintQuantityResource extends Resource
         return $form
             ->schema([
                 TextInput::make('quantity')
-                    ->label('Minimal cetakan')
+                    ->label('Jumlah Cetakan')
                     ->numeric(),
                 TextInput::make('price_per_unit')
-                    ->label('Harga per buku')
+                    ->label('Harga Perbuku')
                     ->numeric(),
             ]);
     }
@@ -43,11 +43,11 @@ class PrintQuantityResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('quantity')
-                    ->label('Minimal cetakan')
+                    ->label('Jumlah Cetakan')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('price_per_unit')
-                    ->label('Harga per buku')
+                    ->label('Harga Perbuku')
                     ->sortable()
                     ->searchable(),
             ])
