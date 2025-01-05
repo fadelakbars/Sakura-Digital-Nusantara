@@ -16,4 +16,11 @@ class EditPriceRange extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Edit Paket Publikasi Buku'; 
+
+    protected function getRedirectUrl(): string
+    {
+        return route('filament.admin.resources.price-ranges.index');
+    }
 }

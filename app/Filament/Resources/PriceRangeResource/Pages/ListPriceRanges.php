@@ -16,4 +16,7 @@ class ListPriceRanges extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Daftar Paket Publikasi Buku'; 
+
 }

@@ -16,4 +16,11 @@ class EditPrintQuantity extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Edit Harga Cetak Per Buku'; 
+
+    protected function getRedirectUrl(): string
+    {
+        return route('filament.admin.resources.print-quantities.index');
+    }
 }

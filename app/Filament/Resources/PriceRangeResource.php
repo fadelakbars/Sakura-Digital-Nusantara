@@ -6,9 +6,11 @@ use App\Filament\Resources\PriceRangeResource\Pages;
 use App\Filament\Resources\PriceRangeResource\RelationManagers;
 use App\Models\PriceRange;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -23,7 +25,18 @@ class PriceRangeResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('min_pages')
+                    ->label('Minimal Halaman')
+                    ->required()
+                    ->numeric(),
+                TextInput::make('max_pages')
+                    ->label('Max Halaman')
+                    ->required()
+                    ->numeric(),
+                TextInput::make('price')
+                    ->label('Harga')
+                    ->required()
+                    ->numeric(),
             ]);
     }
 
@@ -31,7 +44,18 @@ class PriceRangeResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('min_pages')
+                    ->label('Minimal Halaman')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('max_pages')
+                    ->label('Maximal Halaman')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('price')
+                    ->label('Harga')
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 //

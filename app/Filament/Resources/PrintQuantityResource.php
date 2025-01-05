@@ -19,7 +19,11 @@ class PrintQuantityResource extends Resource
 {
     protected static ?string $model = PrintQuantity::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
+
+    protected static ?string $navigationLabel = 'Harga Per Cetakan';
+
+    protected static ?string $navigationGroup = 'Publisher';
 
     public static function form(Form $form): Form
     {

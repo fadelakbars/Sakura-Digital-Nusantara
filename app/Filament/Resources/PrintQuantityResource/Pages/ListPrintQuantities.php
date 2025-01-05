@@ -16,4 +16,7 @@ class ListPrintQuantities extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Daftar Harga Cetak Per Buku'; 
+
 }
