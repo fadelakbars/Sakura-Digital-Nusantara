@@ -6,9 +6,11 @@ use App\Filament\Resources\PrintQuantityResource\Pages;
 use App\Filament\Resources\PrintQuantityResource\RelationManagers;
 use App\Models\PrintQuantity;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -23,7 +25,12 @@ class PrintQuantityResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('quantity')
+                    ->label('Minimal cetakan')
+                    ->numeric(),
+                TextInput::make('price_per_unit')
+                    ->label('Harga per buku')
+                    ->numeric(),
             ]);
     }
 
@@ -31,7 +38,14 @@ class PrintQuantityResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('quantity')
+                    ->label('Minimal cetakan')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('price_per_unit')
+                    ->label('Harga per buku')
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 //
