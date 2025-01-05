@@ -44,7 +44,7 @@ class PublisherPackageResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('pakage_name')
+                TextColumn::make('package_name')
                     ->label('Layanan')
                     ->sortable()
                     ->searchable(),
