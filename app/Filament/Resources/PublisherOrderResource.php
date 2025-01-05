@@ -21,7 +21,7 @@ class PublisherOrderResource extends Resource
 {
     protected static ?string $model = PublisherOrder::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-heroicon-o-book-open';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
     protected static ?string $navigationLabel = 'Orderan Buku';
 
