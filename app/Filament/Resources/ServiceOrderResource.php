@@ -17,7 +17,7 @@ class ServiceOrderResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
-    protected static ?string $navigationLabel = 'Orderan Buku';
+    protected static ?string $navigationLabel = 'Orderan Buku Lama';
 
     protected static ?string $navigationGroup = 'Publisher';
 
