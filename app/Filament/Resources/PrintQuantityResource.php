@@ -30,8 +30,7 @@ class PrintQuantityResource extends Resource
         return $form
             ->schema([
                 TextInput::make('quantity')
-                    ->label('Jumlah Cetakan')
-                    ->numeric(),
+                    ->label('Jumlah Cetakan'),
                 TextInput::make('price_per_unit')
                     ->label('Harga Perbuku')
                     ->numeric(),
