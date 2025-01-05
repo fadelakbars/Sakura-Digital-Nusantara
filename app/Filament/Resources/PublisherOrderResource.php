@@ -7,6 +7,7 @@ use App\Filament\Resources\PublisherOrderResource\RelationManagers;
 use App\Models\PublisherOrder;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -84,7 +85,7 @@ class PublisherOrderResource extends Resource
                 TextInput::make('client_institution')
                     ->required()
                     ->label('Institusi'),
-                TextInput::make('manuscript_path'),
+                FileUpload::make('manuscript_path'),
                 TextInput::make('invoice_number')
                     ->nullable()
                     ->label('Nomor Invoice'),
