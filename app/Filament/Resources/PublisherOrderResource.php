@@ -51,18 +51,18 @@ class PublisherOrderResource extends Resource
                 // RELASI TABEL
                 Forms\Components\Select::make('package_id')
                     ->relationship('package', 'package_name') 
-                    ->searchable()  
+                    // ->searchable()  
+                    ->label('layanan')
                     ->required(),
 
                 Select::make('price_range_id')
                     ->relationship('priceRange', 'price')
-                    ->searchable()  
+                    // ->searchable()  
                     ->label('Paket Penerbitan'),
 
                 Select::make('print_quantity_id')
                     ->relationship('printQuantity', 'quantity')
-                    ->searchable()  
-                    ->label('Paket Cetakan'),
+                    ->label('Harga Cetakan Perbuku'),
                 // END RELASI TABEL
 
                 TextInput::make('client_email')
