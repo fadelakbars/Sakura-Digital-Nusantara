@@ -56,11 +56,11 @@ class PublisherOrderResource extends Resource
                     ->required(),
 
                 Select::make('price_range_id')
-                    ->relationship('priceRange', 'price')
+                    ->relationship('Paket', 'page_rage')
                     ->label('Paket Penerbitan'),
 
                 Select::make('print_quantity_id')
-                    ->relationship('printQuantity', 'price_per_unit')
+                    ->relationship('printQuantity', 'quantity')
                     ->label('Harga Cetakan Perbuku'),
                 // END RELASI TABEL
 
