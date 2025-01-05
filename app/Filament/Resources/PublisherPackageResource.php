@@ -49,7 +49,7 @@ class PublisherPackageResource extends Resource
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('base_price')
-                    ->label('Layanan')
+                    ->label('Harga')
                     ->sortable()
                     ->searchable(),
             ])
