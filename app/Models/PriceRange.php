@@ -15,8 +15,7 @@ class PriceRange extends Model
      * @var array
      */
     protected $fillable = [
-        'min_pages',
-        'max_pages',
+        'page_range',
         'price',
     ];
 
