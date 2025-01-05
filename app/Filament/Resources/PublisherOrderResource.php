@@ -56,7 +56,7 @@ class PublisherOrderResource extends Resource
                     ->required(),
 
                 Select::make('price_range_id')
-                    ->relationship('priceRange', 'price')
+                    ->relationship('priceRange', 'page_rage')
                     // ->searchable()  
                     ->label('Paket Penerbitan'),
 
