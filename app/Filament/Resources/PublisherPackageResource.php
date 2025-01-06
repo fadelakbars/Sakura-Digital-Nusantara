@@ -49,6 +49,7 @@ class PublisherPackageResource extends Resource
                 TextColumn::make('base_price')
                     ->label('Harga')
                     ->sortable()
+                    ->money('idr')
                     ->searchable(),
             ])
             ->filters([
