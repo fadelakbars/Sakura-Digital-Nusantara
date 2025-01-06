@@ -16,4 +16,11 @@ class EditHkiBook extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Edit Harga HKI Buku'; 
+
+    protected function getRedirectUrl(): string
+    {
+        return route('filament.admin.resources.book_hki_price.index');
+    }
 }

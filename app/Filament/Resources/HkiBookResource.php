@@ -20,7 +20,11 @@ class HkiBookResource extends Resource
 {
     protected static ?string $model = BookHkiPrice::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-queue-list';
+
+    protected static ?string $navigationLabel = 'Harga HKI Buku';
+
+    protected static ?string $navigationGroup = 'Publisher Settings';
 
     public static function form(Form $form): Form
     {

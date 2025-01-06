@@ -16,4 +16,7 @@ class ListHkiBooks extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Harga HKI Buku'; 
+
 }
