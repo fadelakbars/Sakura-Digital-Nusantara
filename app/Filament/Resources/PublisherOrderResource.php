@@ -47,7 +47,7 @@ class PublisherOrderResource extends Resource
                 TextInput::make('book_title')
                     ->required()
                     ->label('Judul Buku'),
-                TextInput::make('publisher_orders')
+                TextInput::make('print_qunaitity')
                     ->required()
                     ->numeric()
                     ->label('Jumlah Cetakan'),
