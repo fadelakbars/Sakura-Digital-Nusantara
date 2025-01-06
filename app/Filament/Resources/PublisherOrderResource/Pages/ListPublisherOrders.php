@@ -10,6 +10,8 @@ class ListPublisherOrders extends ListRecords
 {
     protected static string $resource = PublisherOrderResource::class;
 
+    protected static ?string $title = 'Daftar Orderan Buku'; 
+
     protected function getHeaderActions(): array
     {
         return [

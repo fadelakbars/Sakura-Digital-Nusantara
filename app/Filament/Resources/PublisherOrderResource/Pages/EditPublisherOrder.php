@@ -16,4 +16,11 @@ class EditPublisherOrder extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Edit Orderan Buku'; 
+
+    protected function getRedirectUrl(): string
+    {
+        return route('filament.admin.resources.publisher_orders.index');
+    }
 }
