@@ -332,7 +332,7 @@
                             <label for="service_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Layanan</label>
                             <select name="service_type" id="service_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                                 @foreach ($layananpublikasi as $item)
-                                    <option value={{ $item->base_price }}>{{ $item->package_name }}</option>
+                                    <option value={{ $item->id }}>{{ $item->package_name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -340,13 +340,13 @@
                             <label for="book_size" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ukuran Buku</label>
                             <select name="book_size" id="book_size" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                                 @foreach ($paketbukuu as $paket)
-                                    <option value={{ $paket->page_rage }}>{{ $paket->page_rage }}</option>
+                                    <option value={{ $paket->id }}>{{ $paket->page_rage }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-span-2">
-                            <label for="print_quantity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Cetakan</label>
-                            <input type="number" name="print_qunaitity" id="print_quantity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Number of copies" required="">
+                            <label for="print_qunaitity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Cetakan</label>
+                            <input type="number" name="print_qunaitity" id="print_qunaitity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Number of copies" required="">
                         </div>
 
                         <div class="col-span-2">

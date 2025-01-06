@@ -25,20 +25,17 @@ class PublishOrderController extends Controller
             'client_gender' => 'required|in:Pria,Wanita',
             'client_birthdate' => 'required|date|before:today',
             'client_job_title' => 'required|string|max:20',
-            'client_institution' => 'required|string|max:20',
-            'client_institution' => 'required|string|max:20',
-            'client_institution' => 'required|string|max:20',
-
             'manuscript_path' => 'required|file|mimes:doc,docx|max:2048',
             'print_qunaitity'=> 'required|integer|max:20',
+            'service_type' => 'required|exists:publisher_packages,id',
+            'book_size' => 'required|exists:price_ranges,id',
         ]);
 
-        // $copyan = $request->input('print_qunaitity');
-        // $hargapercetakan = $copyan * ;
-        $laynanpublikasi = $request->input('service_type');
-        $paketbukuu = $request->input('book_size');
-        
-        $totalPrice = $laynanpublikasi + $paketbukuu;
+        $package = PublisherPackage::find($request->input('service_type'));
+        $priceRange = PriceRange::find($request->input('book_size'));
+        // $printQuantity = $request->input('print_quantity');
+        $totalPrice = $priceRange->price + $package->base_price;
+
 
         PublisherOrder::created([
             'client_name' => $request->input('name'),
@@ -49,7 +46,7 @@ class PublishOrderController extends Controller
             'client_birthdate' => $request->input('client_birthdate'),
             'client_job_title' => $request->input('client_job_title'),
             'client_institution' => $request->input('client_institution'),
-            'manuscript_path' => $request->input('manuscript_path'),
+            'manuscript_path' => $request->input('manuscript_path')->store('manuscripts'),
             'print_qunaitity' => $request->input('print_qunaitity'),
             'total_price' => $totalPrice,
             'status' => 'Pending',
