@@ -40,7 +40,7 @@ class PublishOrderController extends Controller
         $totalPrice = $priceRange->price + $package->base_price;
 
 
-        PublisherOrder::created([
+        PublisherOrder::create([
             'client_name' => $request->input('name'),
             'book_title' => $request->input('book_title'),
             'client_email' => $request->input('client_email'),
