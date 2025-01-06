@@ -33,7 +33,8 @@ class PublisherPackageResource extends Resource
                     ->label('Layanan')
                     ->required(),
                 TextInput::make('base_price')
-                    ->label('Harga'),
+                    ->numeric(
+                    )->label('Harga'),
             ]);
     }
 

@@ -12,6 +12,6 @@ class BookHkiPrice extends Model
 
     public function orders()
     {
-        return $this->hasMany(PublisherOrder::class, 'print_quantity_id');
+        return $this->hasMany(PublisherOrder::class, 'book_hki_price_id');
     }
 }

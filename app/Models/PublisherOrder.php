@@ -30,6 +30,7 @@ class PublisherOrder extends Model
         'package_id',
         'price_range_id',
         'print_quantity_id',
+        'book_hki_price_id',
         'total_price',
     ];
 

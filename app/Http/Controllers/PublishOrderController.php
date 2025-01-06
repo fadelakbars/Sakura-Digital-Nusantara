@@ -31,12 +31,18 @@ class PublishOrderController extends Controller
             'print_quantity_id' => 'nullable|exists:print_quantities,id',
         ]);
 
-        $totalPrice = 0;
-        if ($request->input('package_id') === 'Menerbitkan buku') {
-            $totalPrice = $request->input('price_range_id');
-        }elseif ($request->input('package_id') === 'Menerbitkan buku dengan HKI') {
-            $totalPrice = $request->input('price_range_id') + 300;
-        }
+        // $bookhki = 
+
+        // $totalPrice = 0;
+        // if ($request->input('package_id') === 'Menerbitkan buku') {
+        //     $totalPrice = $request->input('price_range_id');
+        // }elseif ($request->input('package_id') === 'Menerbitkan buku dengan HKI') {
+        //     $totalPrice = $request->input('price_range_id') + $request->input('book_hki_price_id');
+        // }elseif ($request->input('package_id') === 'Menerbitkan dan mencetak buku') {
+        //     $totalPrice = $request->input('price_range_id') + $request->input('book_hki_price_id');
+        // }elseif ($request->input('package_id') === 'Menerbitkan, mencetak buku dengan HKI') {
+        //     $totalPrice = $request->input('price_range_id') + $request->input('book_hki_price_id');
+        // }
 
         PublisherOrder::created([
             'client_name' => $request->input('name'),
@@ -53,7 +59,8 @@ class PublishOrderController extends Controller
             'package_id' => $request->input('name'),
             'price_range_id' => $request->input('name'),
             'print_quantity_id' => $request->input('name'),
-            'total_price' => 'Pending', 
+            'book_hki_price_id' => $request->input('name'),
+            // 'total_price' => $totalPrice, 
 
         ]);
 
