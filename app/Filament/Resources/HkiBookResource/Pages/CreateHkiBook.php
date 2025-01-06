@@ -14,6 +14,6 @@ class CreateHkiBook extends CreateRecord
 
     protected function getRedirectUrl(): string
     {
-        return route('filament.admin.resources.book_hki_price.index');
+        return route('filament.admin.resources.book_hki_prices.index');
     }
 }
