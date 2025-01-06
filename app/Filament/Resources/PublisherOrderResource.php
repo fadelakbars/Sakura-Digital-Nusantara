@@ -89,7 +89,7 @@ class PublisherOrderResource extends Resource
                     ->nullable()
                     ->label('Nomor Invoice'),
                 TextInput::make('total_price')
-                    ->label('Total Harga')->money('idr'),
+                    ->label('Total Harga'),
 
             ]);
     }
