@@ -16,13 +16,13 @@ class PublisherOrder extends Model
      */
     protected $fillable = [
         'client_name',
+        'book_title',
         'client_email',
         'client_phone',
         'client_gender',
         'client_birthdate',
         'client_job_title',
         'client_institution',
-        'book_title',
         'manuscript_path',
         'invoice_number',
         'invoice_path',
@@ -63,5 +63,10 @@ class PublisherOrder extends Model
     public function printQuantity()
     {
         return $this->belongsTo(PrintQuantity::class, 'print_quantity_id');
+    }
+
+    public function bookhkipreice()
+    {
+        return $this->belongsTo(BookHkiPrice::class, 'book_hki_price_id');
     }
 }
