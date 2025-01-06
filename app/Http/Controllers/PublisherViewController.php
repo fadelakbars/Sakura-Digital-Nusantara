@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
-
+use App\Models\PriceRange;
 
 class PublisherViewController extends Controller
 {
     public function index() {
         $books = Book::all();
 
+        $paketbukuu = PriceRange::all();
+
         return view('publisher', [
-            'books' => $books
+            'paketbukuu' => $paketbukuu,
+            'books' => $books,
         ]);
     }
 

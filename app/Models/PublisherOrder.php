@@ -23,16 +23,16 @@ class PublisherOrder extends Model
         'client_birthdate',
         'client_job_title',
         'client_institution',
-        'manuscript_path',
-        'print_qunaitity',
-        'invoice_number',
-        'invoice_path',
-        'status',
-        'package_id',
-        'price_range_id',
-        'print_quantity_id',
-        'book_hki_price_id',
-        'total_price',
+        'manuscript_path', 
+        'print_qunaitity', 
+        'invoice_number', //bukan user
+        'invoice_path', //bukan user 
+        'status', //bukan user
+        'package_id', 
+        'price_range_id', 
+        'print_quantity_id', 
+        'book_hki_price_id', 
+        'total_price',//bukan user
     ];
 
     /**
@@ -67,8 +67,4 @@ class PublisherOrder extends Model
         return $this->belongsTo(PrintQuantity::class, 'print_quantity_id');
     }
 
-    public function bookhkipreice()
-    {
-        return $this->belongsTo(BookHkiPrice::class, 'book_hki_price_id');
-    }
 }

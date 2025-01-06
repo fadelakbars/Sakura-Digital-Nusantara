@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Alert;
+use App\Models\PriceRange;
+use App\Models\PrintQuantity;
 use App\Models\PublisherOrder;
 use App\Models\PublisherPackage;
 use App\Models\ServiceOrder;
@@ -24,25 +26,35 @@ class PublishOrderController extends Controller
             'client_birthdate' => 'required|date|before:today',
             'client_job_title' => 'required|string|max:20',
             'client_institution' => 'required|string|max:20',
-            'manuscript_path' => 'required|string|max:20',
-
+            'manuscript_path' => 'required|string|max:255',
+            'print_qunaitity'=> 'required|integer|max:20',
             'package_id' => 'required|exists:publisher_packages,id',
             'price_range_id' => 'required|exists:price_ranges,id',
-            'print_quantity_id' => 'nullable|exists:print_quantities,id',
         ]);
 
-        // $bookhki = 
+        $carinamalayanan = PublisherPackage::findOrFail($request->input('package_id'));
+        $namalayanan = $carinamalayanan->package_name;
 
-        // $totalPrice = 0;
-        // if ($request->input('package_id') === 'Menerbitkan buku') {
-        //     $totalPrice = $request->input('price_range_id');
-        // }elseif ($request->input('package_id') === 'Menerbitkan buku dengan HKI') {
-        //     $totalPrice = $request->input('price_range_id') + $request->input('book_hki_price_id');
-        // }elseif ($request->input('package_id') === 'Menerbitkan dan mencetak buku') {
-        //     $totalPrice = $request->input('price_range_id') + $request->input('book_hki_price_id');
-        // }elseif ($request->input('package_id') === 'Menerbitkan, mencetak buku dengan HKI') {
-        //     $totalPrice = $request->input('price_range_id') + $request->input('book_hki_price_id');
-        // }
+        $carihargalayanan = PublisherPackage::findOrFail($request->input('package_id'));
+        $hargalayanan = $carihargalayanan->base_price;
+
+        $caripaketpenerbitan = PriceRange::findOrFail($request->input('price_range_id'));
+        $paketpenerbitan = $caripaketpenerbitan->price;
+
+        $carihargacetakan = PrintQuantity::findOrFail($request->input('print_quantity_id'));
+        $hargacetakan = $carihargacetakan->price_per_unit;
+
+        $rangehargacetakan = PrintQuantity::findOrFail($request->input('print_quantity_id'));
+        $rangecetakan = $rangehargacetakan->quantity;
+
+        $jumlahcetakancustomer = $request->input('print_qunaitity');
+
+        $totalPrice = 0;
+        if ($namalayanan === 'Menerbitkan buku') {
+            $totalPrice = $paketpenerbitan;
+        }elseif ($namalayanan === 'Menerbitkan buku dengan HKI') {
+            $totalPrice = $hargalayanan + $paketpenerbitan;
+        }
 
         PublisherOrder::created([
             'client_name' => $request->input('name'),
@@ -54,32 +66,14 @@ class PublishOrderController extends Controller
             'client_job_title' => $request->input('client_job_title'),
             'client_institution' => $request->input('client_institution'),
             'manuscript_path' => $request->input('manuscript_path'),
-            
+            'print_qunaitity' => $request->input('print_qunaitity'),
+            'package_id' => $request->input('package_id'),
+            'price_range_id' => $request->input('price_range_id'),
+            'print_quantity_id' => $request->input('print_quantity_id'),
+            'book_hki_price_id' => $request->input('book_hki_price_id'),
+            'total_price' => $totalPrice, 
             'status' => 'Pending', 
-            'package_id' => $request->input('name'),
-            'price_range_id' => $request->input('name'),
-            'print_quantity_id' => $request->input('name'),
-            'book_hki_price_id' => $request->input('name'),
-            // 'total_price' => $totalPrice, 
-
         ]);
-
-        // $servicePackage = PublisherPackage::findOrFail($validated['service_package_id']);
-
-        // Hitung total harga
-        // $totalPrice = $servicePackage->base_price;
-
-        // if ($request->filled('price_range_id')) {
-        //     $priceRange = \App\Models\PriceRange::findOrFail($validated['price_range_id']);
-        //     $totalPrice += $priceRange->price;
-        // }
-
-        // if ($request->filled('print_quantity_id')) {
-        //     $printQuantity = \App\Models\PrintQuantity::findOrFail($validated['print_quantity_id']);
-        //     $totalPrice += $printQuantity->price_per_unit * $printQuantity->quantity;
-        // }
-
-        // $order = \App\Models\Order::create(array_merge($validated, ['total_price' => $totalPrice]));
 
         return redirect()->route('orders.index')->with('success', 'Order berhasil dibuat.');
     }

@@ -41,16 +41,20 @@ class PublisherOrderResource extends Resource
                     ])
                     ->default('pending')
                     ->label('Status'),
+
                 TextInput::make('client_name')
                     ->required()
                     ->label('Nama Pelanggan'),
+
                 TextInput::make('book_title')
                     ->required()
                     ->label('Judul Buku'),
+
                 TextInput::make('print_qunaitity')
                     ->required()
                     ->numeric()
                     ->label('Jumlah Cetakan'),
+
                 // RELASI TABEL
                 Forms\Components\Select::make('package_id')
                     ->relationship('package', 'package_name') 
@@ -65,32 +69,39 @@ class PublisherOrderResource extends Resource
 
                 Select::make('print_quantity_id')
                     ->relationship('printQuantity', 'quantity')
-                    ->label('Harga Cetakan Perbuku'),
+                    ->label('Range Harga Cetakan Perbuku'),
                 // END RELASI TABEL
 
                 TextInput::make('client_email')
                     ->email()
                     ->required()
                     ->label('Email Pelanggan'),
+
                 TextInput::make('client_phone')
                     ->required()
                     ->label('Whatsapp'),
+
                 Select::make('client_gender')
                     ->options(['Pria' => 'Pria', 'Wanita' => 'Wanita'])
                     ->required()
                     ->label('Gender'),
+
                 DatePicker::make('client_birthdate')
                     ->required()
                     ->label('Tanggal Lahir'),
+
                 TextInput::make('client_job_title')
                     ->required()
                     ->label('Pekerjaan'),
+
                 TextInput::make('client_institution')
                     ->required()
                     ->label('Institusi'),
+
                 TextInput::make('invoice_number')
                     ->nullable()
                     ->label('Nomor Invoice'),
+                    
                 TextInput::make('total_price')
                     ->label('Total Harga'),
 
