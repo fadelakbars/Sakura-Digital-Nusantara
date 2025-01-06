@@ -20,7 +20,7 @@ class HkiBookResource extends Resource
 {
     protected static ?string $model = BookHkiPrice::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-queue-list';
+    protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
 
     protected static ?string $navigationLabel = 'Harga HKI Buku';
 
@@ -31,6 +31,7 @@ class HkiBookResource extends Resource
         return $form
             ->schema([
                 TextInput::make('book_hki_price')
+                    ->numeric()
                     ->label('Harga HKI Buku')
             ]);
     }
@@ -40,6 +41,7 @@ class HkiBookResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('book_hki_price')
+                    ->money('idr')
                     ->label('Harga HKI Buku')
             ])
             ->filters([
