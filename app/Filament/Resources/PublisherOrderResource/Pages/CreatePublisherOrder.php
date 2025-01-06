@@ -14,6 +14,6 @@ class CreatePublisherOrder extends CreateRecord
 
     protected function getRedirectUrl(): string
     {
-        return route('filament.admin.resources.publisher_orders.index');
+        return route('filament.admin.resources.publisher-orders.index');
     }
 }

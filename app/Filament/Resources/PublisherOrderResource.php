@@ -49,6 +49,7 @@ class PublisherOrderResource extends Resource
                     ->label('Judul Buku'),
                 TextInput::make('publisher_orders')
                     ->required()
+                    ->numeric()
                     ->label('Jumlah Cetakan'),
                 // RELASI TABEL
                 Forms\Components\Select::make('package_id')
