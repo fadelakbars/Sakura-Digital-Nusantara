@@ -30,7 +30,10 @@ class PublishOrderController extends Controller
             'service_type' => 'required|exists:publisher_packages,id',
             'book_size' => 'required|exists:price_ranges,id',
         ]);
-
+        $manuscriptPath = $request->file('manuscript_path')->store('manuscripts');
+        if (!$request->hasFile('manuscript_path')) {
+            return back()->withErrors(['manuscript_path' => 'File naskah wajib diunggah.']);
+        }
         $package = PublisherPackage::find($request->input('service_type'));
         $priceRange = PriceRange::find($request->input('book_size'));
         // $printQuantity = $request->input('print_quantity');
@@ -46,7 +49,7 @@ class PublishOrderController extends Controller
             'client_birthdate' => $request->input('client_birthdate'),
             'client_job_title' => $request->input('client_job_title'),
             'client_institution' => $request->input('client_institution'),
-            'manuscript_path' => $request->input('manuscript_path')->store('manuscripts'),
+            'manuscript_path' => $manuscriptPath,
             'print_qunaitity' => $request->input('print_qunaitity'),
             'total_price' => $totalPrice,
             'status' => 'Pending',
