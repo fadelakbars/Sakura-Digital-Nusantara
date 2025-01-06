@@ -85,14 +85,11 @@ class PublisherOrderResource extends Resource
                 TextInput::make('client_institution')
                     ->required()
                     ->label('Institusi'),
-                // FileUpload::make('manuscript_path'),
                 TextInput::make('invoice_number')
                     ->nullable()
                     ->label('Nomor Invoice'),
-                // TextInput::make('invoice_path')
-                //     ->nullable(),
                 TextInput::make('total_price')
-                    ->label('Total Harga'),
+                    ->label('Total Harga')->money('idr'),
 
             ]);
     }

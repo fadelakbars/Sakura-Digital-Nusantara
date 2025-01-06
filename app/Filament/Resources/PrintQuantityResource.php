@@ -48,7 +48,7 @@ class PrintQuantityResource extends Resource
                 TextColumn::make('price_per_unit')
                     ->label('Harga Perbuku')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()->money('idr'),
             ])
             ->filters([
                 //

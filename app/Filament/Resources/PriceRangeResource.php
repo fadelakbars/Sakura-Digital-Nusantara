@@ -50,7 +50,7 @@ class PriceRangeResource extends Resource
                 TextColumn::make('price')
                     ->label('Harga')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()->money('idr'),
             ])
             ->filters([
                 //
