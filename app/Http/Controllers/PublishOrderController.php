@@ -50,6 +50,7 @@ class PublishOrderController extends Controller
             'client_job_title' => $request->input('client_job_title'),
             'client_institution' => $request->input('client_institution'),
             'manuscript_path' => $manuscriptPath,
+            'package_id' => $request->input('package_id'),
             'print_qunaitity' => $request->input('print_qunaitity'),
             'total_price' => $totalPrice,
             'status' => 'Pending',
