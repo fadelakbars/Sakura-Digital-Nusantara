@@ -15,7 +15,7 @@ return new class extends Migration
             $table->unsignedBigInteger('package_id')->nullable()->change();
             $table->unsignedBigInteger('price_range_id')->nullable()->change();
             $table->unsignedBigInteger('print_quantity_id')->nullable()->change();
-            $table->unsignedBigInteger('book_hki_price_id')->nullable()->change();
+            // $table->unsignedBigInteger('book_hki_price_id')->nullable()->change();
 
         });
     }
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->unsignedBigInteger('package_id')->nullable(false)->change();
             $table->unsignedBigInteger('price_range_id')->nullable(false)->change();
             $table->unsignedBigInteger('print_quantity_id')->nullable(false)->change();
-            $table->unsignedBigInteger('book_hki_price_id')->nullable(false)->change();
+            // $table->unsignedBigInteger('book_hki_price_id')->nullable(false)->change();
 
         });
     }
