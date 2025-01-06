@@ -25,20 +25,20 @@ class PublishOrderController extends Controller
             'client_gender' => 'required|in:Pria,Wanita',
             'client_birthdate' => 'required|date|before:today',
             'client_job_title' => 'required|string|max:20',
+            'client_institution' => 'required|string|max:20',
             'manuscript_path' => 'required|file|mimes:doc,docx|max:2048',
-            'print_qunaitity'=> 'required|integer|max:20',
+            'print_quantity' => 'required|integer',
             'service_type' => 'required|exists:publisher_packages,id',
             'book_size' => 'required|exists:price_ranges,id',
         ]);
-        $manuscriptPath = $request->file('manuscript_path')->store('manuscripts');
-        if (!$request->hasFile('manuscript_path')) {
-            return back()->withErrors(['manuscript_path' => 'File naskah wajib diunggah.']);
-        }
-        $package = PublisherPackage::find($request->input('service_type'));
-        $priceRange = PriceRange::find($request->input('book_size'));
-        // $printQuantity = $request->input('print_quantity');
-        $totalPrice = $priceRange->price + $package->base_price;
 
+        // Ambil data layanan dan paket
+        $package = PublisherPackage::findOrFail($request->input('service_type'));
+        $priceRange = PriceRange::findOrFail($request->input('book_size'));
+
+        $totalprice = $package->base_price + $priceRange->price;
+        // Simpan data order
+        $manuscriptPath = $request->file('manuscript_path')->store('manuscripts');
 
         PublisherOrder::create([
             'client_name' => $request->input('client_name'),
@@ -50,15 +50,15 @@ class PublishOrderController extends Controller
             'client_job_title' => $request->input('client_job_title'),
             'client_institution' => $request->input('client_institution'),
             'manuscript_path' => $manuscriptPath,
-            'package_id' => $request->input('package_id'),
-            'price_range_id' => $request->input('package_id'),
-            'print_qunaitity' => $request->input('print_qunaitity'),
-            'total_price' => $totalPrice,
+            'print_quantity' => $request->input('print_quantity'),
+            'package_id' => $package->package_name,
+            'price_range_id' => $priceRange->page_rage,
+            'total_price' => $totalprice, // Tambahkan logika perhitungan harga jika ada
             'status' => 'Pending',
         ]);
 
-        alert()->success('Terimakasih!','Orderan berhasil dibuat, silahkan tunggu konfirmasi dari admin');
-        return back();
+        return back()->with('success', 'Order berhasil dibuat.');
     }
+
 
 }
