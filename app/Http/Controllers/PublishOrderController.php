@@ -55,7 +55,8 @@ class PublishOrderController extends Controller
             'status' => 'Pending',
         ]);
 
-        return redirect()->route('orders.index')->with('success', 'Order berhasil dibuat.');
+        alert()->success('Terimakasih!','Orderan berhasil dibuat, silahkan tunggu konfirmasi dari admin');
+        return back();
     }
 
 }
