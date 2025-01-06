@@ -115,14 +115,14 @@ class PublisherOrderResource extends Resource
                 }),
                 Tables\Columns\TextColumn::make('total_price')->label('Total Harga')->money('IDR'),
                 Tables\Columns\IconColumn::make('client_phone')
-                    ->label('Whatsapp')
+                    ->label('WA')
                     ->getStateUsing(fn() => true) 
                     ->icon(fn(bool $state): string => 'heroicon-o-phone') 
                     ->color('success')
                     ->url(fn($record) => 'https://wa.me/' . preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $record->phone)))
                     ->openUrlInNewTab(), 
                 Tables\Columns\IconColumn::make('')
-                    ->label('Download Invoice')
+                    ->label('Invoice')
                     ->getStateUsing(fn() => true) 
                     ->icon(fn(bool $state): string => 'heroicon-o-arrow-down-on-square') 
                     ->color('info')
@@ -140,7 +140,7 @@ class PublisherOrderResource extends Resource
                     ->label('Filter by Status'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()->label('Edit'),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make()->label('Delete Selected'),
