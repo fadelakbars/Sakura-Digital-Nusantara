@@ -24,6 +24,7 @@ class PublisherOrder extends Model
         'client_job_title',
         'client_institution',
         'manuscript_path',
+        'print_qunaitity',
         'invoice_number',
         'invoice_path',
         'status',

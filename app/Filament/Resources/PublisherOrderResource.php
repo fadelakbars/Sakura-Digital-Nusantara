@@ -47,7 +47,9 @@ class PublisherOrderResource extends Resource
                 TextInput::make('book_title')
                     ->required()
                     ->label('Judul Buku'),
-
+                TextInput::make('publisher_orders')
+                    ->required()
+                    ->label('Jumlah Cetakan'),
                 // RELASI TABEL
                 Forms\Components\Select::make('package_id')
                     ->relationship('package', 'package_name') 
@@ -98,7 +100,7 @@ class PublisherOrderResource extends Resource
     {
         return $table
             ->columns([
-                //
+                //publisher_orders
                 Tables\Columns\TextColumn::make('client_name')->label('Nama Pelanggan'),
                 Tables\Columns\TextColumn::make('book_title')->label('Judul Buku'),
                 Tables\Columns\TextColumn::make('package.package_name')->label('Layanan'),
