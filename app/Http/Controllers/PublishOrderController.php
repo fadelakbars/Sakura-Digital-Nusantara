@@ -41,7 +41,7 @@ class PublishOrderController extends Controller
 
 
         PublisherOrder::create([
-            'client_name' => $request->input('name'),
+            'client_name' => $request->input('client_name'),
             'book_title' => $request->input('book_title'),
             'client_email' => $request->input('client_email'),
             'client_phone' => $request->input('client_phone'),
