@@ -101,7 +101,7 @@ class PublisherOrderResource extends Resource
                 TextInput::make('invoice_number')
                     ->nullable()
                     ->label('Nomor Invoice'),
-                    
+
                 TextInput::make('total_price')
                     ->label('Total Harga'),
 
@@ -113,9 +113,9 @@ class PublisherOrderResource extends Resource
         return $table
             ->columns([
                 //publisher_orders
-                Tables\Columns\TextColumn::make('client_name')->label('Nama Pelanggan'),
-                Tables\Columns\TextColumn::make('book_title')->label('Judul Buku'),
-                Tables\Columns\TextColumn::make('package.package_name')->label('Layanan'),
+                Tables\Columns\TextColumn::make('client_name')->label('Nama Pelanggan')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('book_title')->label('Judul Buku')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('package.package_name')->label('Layanan')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('status')
                 ->label('Status')
                 ->badge()
@@ -126,8 +126,8 @@ class PublisherOrderResource extends Resource
                         'Completed' => 'success',
                         'Revised' => 'danger',
                     };
-                }),
-                Tables\Columns\TextColumn::make('total_price')->label('Total Harga')->money('IDR'),
+                })->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('total_price')->label('Total Harga')->money('IDR')->searchable()->sortable(),
                 Tables\Columns\IconColumn::make('client_phone')
                     ->label('WA')
                     ->getStateUsing(fn() => true) 
