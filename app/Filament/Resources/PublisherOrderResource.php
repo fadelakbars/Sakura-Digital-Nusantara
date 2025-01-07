@@ -138,8 +138,16 @@ class PublisherOrderResource extends Resource
                     ->label('Invoice')
                     ->getStateUsing(fn() => true) 
                     ->icon(fn(bool $state): string => 'heroicon-o-arrow-down-on-square') 
-                    ->color('info')
-                    ->url(fn($record) => route('invoice.download', ['id' => $record->id]))
+                    ->color('warning')
+                    ->url(fn($record) => route('invoice.download', ['id' => $record->id])),
+                Tables\Columns\IconColumn::make('manuscript_download')
+                    ->label('Manuscript')
+                    ->getStateUsing(fn() => true)
+                    ->icon(fn(bool $state): string => 'heroicon-o-document-arrow-down')
+                    ->color('primary')
+                    ->url(fn($record) => route('manuscript.download', ['id' => $record->id]))
+                    ->openUrlInNewTab(),
+
             ])
             ->filters([
                 //

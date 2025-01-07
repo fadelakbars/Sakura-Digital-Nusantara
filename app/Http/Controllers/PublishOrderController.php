@@ -103,5 +103,21 @@ class PublishOrderController extends Controller
         ];
     }
 
+    public function downloadManuscript($id)
+    {
+        $order = PublisherOrder::findOrFail($id);
+
+        if (!$order->manuscript_path) {
+            return redirect()->back()->with('error', 'Manuscript file not found.');
+        }
+
+        $filePath = storage_path('app/' . $order->manuscript_path);
+
+        if (!file_exists($filePath)) {
+            return redirect()->back()->with('error', 'Manuscript file not found on server.');
+        }
+
+        return response()->download($filePath);
+    }
 
 }

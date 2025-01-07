@@ -22,5 +22,6 @@ Route::get('/publisher', [PublisherViewController::class, 'index']);
 Route::get('/buku/{id}', [PublisherViewController::class, 'detailbuku']);
 Route::post('/publisher-order', [PublishOrderController::class, 'store'])->name('service-order.store'); 
 Route::get('/invoice/{id}/download', [InvoiceController::class, 'downloadInvoice'])->name('invoice.download');
+Route::get('/publisher-order/{id}/download-manuscript', [PublishOrderController::class, 'downloadManuscript'])->name('manuscript.download');
 // END PUBLISHER  
 
