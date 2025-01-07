@@ -16,4 +16,7 @@ class ListTurnitinOrders extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected static ?string $title = 'Daftar Turnitin Order'; 
+
 }
