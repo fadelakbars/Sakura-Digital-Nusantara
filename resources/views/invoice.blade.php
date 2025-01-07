@@ -113,19 +113,19 @@
         <table>
             <tr>
                 <th>Nama</th>
-                <td>{{ $invoice->name }}</td>
+                <td>{{ $invoice->client_name }}</td>
             </tr>
             <tr>
                 <th>Email</th>
-                <td>{{ $invoice->email }}</td>
+                <td>{{ $invoice->client_email }}</td>
             </tr>
             <tr>
                 <th>Telepon</th>
-                <td>{{ $invoice->phone }}</td>
+                <td>{{ $invoice->client_phone }}</td>
             </tr>
             <tr>
-                <th>Alamat</th>
-                <td>{{ $invoice->address }}</td>
+                <th>Profesi</th>
+                <td>{{ $invoice->client_job_title }}</td>
             </tr>
         </table>
 
@@ -134,25 +134,25 @@
         <table>
             <tr>
                 <th>Layanan</th>
-                <td>{{ $invoice->service_type }}</td>
+                <td>{{ $invoice->package_id }}</td>
             </tr>
             <tr>
                 <th>Ukuran Buku</th>
-                <td>{{ $invoice->book_size }}</td>
+                <td>{{ $invoice->price_range_id }}</td>
             </tr>
             <tr>
                 <th>Jumlah Cetakan</th>
-                <td>{{ $invoice->print_quantity }}</td>
+                <td>{{ $invoice->print_quantity_id }}</td>
             </tr>
             <tr>
                 <th>Harga</th>
-                <td>IDR {{ number_format($invoice->amount, 2) }}</td>
+                <td>IDR {{ number_format($invoice->total_price, 2) }}</td>
             </tr>
         </table>
 
         <!-- Total -->
         <div class="total">
-            Total: IDR {{ number_format($invoice->amount, 2) }}
+            Total: IDR {{ number_format($invoice->total_price, 2) }}
         </div>
 
         <!-- Payment Info -->
