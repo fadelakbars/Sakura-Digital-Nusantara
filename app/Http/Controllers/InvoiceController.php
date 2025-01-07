@@ -21,6 +21,22 @@ class InvoiceController extends Controller
     //     return $pdf->download($fileName);
     // }
 
+    // public function downloadInvoice($id)
+    // {
+    //     // Ambil data invoice dengan relasi
+    //     $invoice = PublisherOrder::with(['package', 'priceRange', 'printQuantity'])->findOrFail($id);
+
+    //     // Sanitasi nama file
+    //     $sanitizedInvoiceNumber = Str::slug(str_replace('/', '-', $invoice->invoice_number));
+    //     $fileName = 'Invoice-' . $sanitizedInvoiceNumber . '.pdf';
+
+    //     // Render view menjadi PDF
+    //     $pdf = Pdf::loadView('invoice', compact('invoice'));
+
+    //     // Unduh file PDF
+    //     return $pdf->download($fileName);
+    // }
+
     public function downloadInvoice($id)
     {
         // Ambil data invoice dengan relasi
@@ -36,5 +52,6 @@ class InvoiceController extends Controller
         // Unduh file PDF
         return $pdf->download($fileName);
     }
+
 
 }

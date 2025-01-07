@@ -135,15 +135,15 @@
             <tr>
                 
                 <th>Layanan</th>
-                <td>{{ $invoice->package_id }}</td>
+                <td>{{ $invoice->package->package_name }}</td>
             </tr>
             <tr>
                 <th>Ukuran Buku</th>
-                <td>{{ $invoice->price_range_id }}</td>
+                <td>{{ $invoice->priceRange->page_rage }}</td>
             </tr>
             <tr>
                 <th>Jumlah Cetakan</th>
-                <td>{{ $invoice->print_quantity_id }}</td>
+                <td>{{ $invoice->printQuantity->quantity }}</td>
             </tr>
             <tr>
                 <th>Harga</th>
