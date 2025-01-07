@@ -51,7 +51,7 @@
                         <label for="date_of_birth" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal Lahir</label>
                         <input type="date" name="client_birthdate" id="date_of_birth" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                     </div>
-                    
+
                     <div class="col-span-2">
                         <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis Kelamin</label>
                         <select name="client_gender" id="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
@@ -72,7 +72,7 @@
 
                     <div class="col-span-2">
                         <label for="service_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Layanan</label>
-                        <select name="service_type" id="service_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <select name="package_id" id="service_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                             @foreach ($layananpublikasi as $item)
                                 <option value={{ $item->id }}>{{ $item->package_name }}</option>
                             @endforeach
@@ -81,7 +81,7 @@
 
                     <div class="col-span-2">
                         <label for="book_size" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ukuran Buku</label>
-                        <select name="book_size" id="book_size" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <select name="price_range_id" id="book_size" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                             @foreach ($paketbukuu as $paket)
                                 <option value={{ $paket->id }}>{{ $paket->page_rage }}</option>
                             @endforeach
