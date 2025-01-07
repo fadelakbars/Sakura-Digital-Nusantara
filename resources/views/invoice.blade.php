@@ -138,12 +138,16 @@
                 <td>{{ $invoice->package->package_name }}</td>
             </tr>
             <tr>
-                <th>Ukuran Buku</th>
+                <th>Paket Penerbitan</th>
                 <td>{{ $invoice->priceRange->page_rage }}</td>
             </tr>
+            {{-- <tr>
+                <th>Ukuran</th>
+                <td>{{ $invoice->priceRange->price }}</td>
+            </tr> --}}
             <tr>
                 <th>Jumlah Cetakan</th>
-                <td>{{ $invoice->printQuantity->quantity }}</td>
+                <td>{{ $invoice->print_qunaitity }}</td>
             </tr>
             <tr>
                 <th>Harga</th>
