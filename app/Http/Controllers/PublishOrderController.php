@@ -11,6 +11,7 @@ use App\Models\ServiceOrder;
 use Illuminate\Http\Request;
 
 
+
 class PublishOrderController extends Controller
 {
     
@@ -41,7 +42,7 @@ class PublishOrderController extends Controller
 
         $printCost = $this->calculatePrintCost($jumlahCetakan);
 
-        $totalPrice = $priceRange->price+ $printCost['total_cost'] + $package->base_price;
+        $totalPrice = $priceRange->price + $printCost['total_cost'] + $package->base_price;
         // $printQuantity = $request->input('print_quantity');
         // $totalPrice = $priceRange->price + $package->base_price;
 
@@ -68,36 +69,36 @@ class PublishOrderController extends Controller
     }
 
     public function calculatePrintCost($jumlahCetakan)
-{
-    // Ambil semua range harga
-    $printQuantities = PrintQuantity::all();
+    {
+        // Ambil semua range harga
+        $printQuantities = PrintQuantity::all();
 
-    // Temukan range yang sesuai
-    $matchedRange = $printQuantities->filter(function ($range) use ($jumlahCetakan) {
-        // Pisahkan string "1 - 10 cetakan" menjadi angka min dan max
-        preg_match('/(\d+)\s*-\s*(\d+)/', $range->quantity, $matches);
-        $min = (int)$matches[1];
-        $max = (int)$matches[2];
+        // Temukan range yang sesuai
+        $matchedRange = $printQuantities->filter(function ($range) use ($jumlahCetakan) {
+            // Pisahkan string "1 - 10 cetakan" menjadi angka min dan max
+            preg_match('/(\d+)\s*-\s*(\d+)/', $range->quantity, $matches);
+            $min = (int)$matches[1];
+            $max = (int)$matches[2];
 
-        // Periksa apakah jumlah cetakan ada dalam range
-        return $jumlahCetakan >= $min && $jumlahCetakan <= $max;
-    })->first();
+            // Periksa apakah jumlah cetakan ada dalam range
+            return $jumlahCetakan >= $min && $jumlahCetakan <= $max;
+        })->first();
 
-    // Jika tidak ada range yang cocok, gunakan fallback harga default
-    if (!$matchedRange) {
+        // Jika tidak ada range yang cocok, gunakan fallback harga default
+        if (!$matchedRange) {
+            return [
+                'price_per_unit' => 20000, // Harga default
+                'total_cost' => $jumlahCetakan * 20000,
+            ];
+        }
+
+        // Hitung total harga berdasarkan range yang ditemukan
+        $pricePerUnit = $matchedRange->price_per_unit;
         return [
-            'price_per_unit' => 20000, // Harga default
-            'total_cost' => $jumlahCetakan * 20000,
+            'price_per_unit' => $pricePerUnit,
+            'total_cost' => $pricePerUnit * $jumlahCetakan,
         ];
     }
-
-    // Hitung total harga berdasarkan range yang ditemukan
-    $pricePerUnit = $matchedRange->price_per_unit;
-    return [
-        'price_per_unit' => $pricePerUnit,
-        'total_cost' => $pricePerUnit * $jumlahCetakan,
-    ];
-}
 
 
 }
