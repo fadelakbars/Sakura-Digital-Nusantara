@@ -106,18 +106,27 @@ class PublishOrderController extends Controller
     public function downloadManuscript($id)
     {
         $order = PublisherOrder::findOrFail($id);
-
+    
         if (!$order->manuscript_path) {
             return redirect()->back()->with('error', 'Manuscript file not found.');
         }
-
+    
         $filePath = storage_path('app/private/' . $order->manuscript_path);
-
+    
         if (!file_exists($filePath)) {
             return redirect()->back()->with('error', 'Manuscript file not found on server.');
         }
-
-        return response()->download($filePath);
+    
+        // Format penamaan file
+        $fileName = sprintf(
+            '%s_%s_Manuscript.%s',
+            str_replace(' ', '_', $order->client_name), // Nama client
+            str_replace(' ', '_', $order->book_title), // Judul buku
+            pathinfo($filePath, PATHINFO_EXTENSION)    // Ekstensi file
+        );
+    
+        return response()->download($filePath, $fileName);
     }
+    
 
 }
