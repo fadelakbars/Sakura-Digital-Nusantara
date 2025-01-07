@@ -59,7 +59,7 @@ class PublishOrderController extends Controller
             'manuscript_path' => $manuscriptPath,
             'package_id' => $package->id,
             'price_range_id' => $package->id,
-            'print_qunaitity' => $jumlahCetakan,
+            'print_qunaitity' => $request->input('print_quantity'),
             'total_price' => $totalPrice,
             'status' => 'Pending',
         ]);
