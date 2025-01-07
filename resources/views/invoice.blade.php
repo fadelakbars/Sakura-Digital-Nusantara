@@ -141,10 +141,6 @@
                 <th>Paket Penerbitan</th>
                 <td>{{ $invoice->priceRange->page_rage }}</td>
             </tr>
-            {{-- <tr>
-                <th>Ukuran</th>
-                <td>{{ $invoice->priceRange->price }}</td>
-            </tr> --}}
             <tr>
                 <th>Jumlah Cetakan</th>
                 <td>{{ $invoice->print_qunaitity }}</td>
