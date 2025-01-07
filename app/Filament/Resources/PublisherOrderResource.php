@@ -141,7 +141,7 @@ class PublisherOrderResource extends Resource
                     ->color('warning')
                     ->url(fn($record) => route('invoice.download', ['id' => $record->id])),
                 Tables\Columns\IconColumn::make('manuscript_download')
-                    ->label('Manuscript')
+                    ->label('Manuskrip')
                     ->getStateUsing(fn() => true)
                     ->icon(fn(bool $state): string => 'heroicon-o-document-arrow-down')
                     ->color('primary')
