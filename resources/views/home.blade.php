@@ -8,7 +8,7 @@
     <section class="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
         <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
             <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Sakura Digital Nusantara</h1>
-            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">CV. Sakura Digital Nusantara atau disingkat SDN adalah perusahaan yang didirkan pada 15 Nopember 2021 dan Nopember 2022 dilakukan ekspansi beberapa peluang usaha yang berhubungan dengan pengadaaan barang dan jasa. Kantor SDN beralamat pada Jl. Biola Raya J148 Perumnas Antang, Kelurahan Manggala Kota Makassar.</p>
+            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">CV. Sakura Digital Nusantara atau disingkat SDN adalah perusahaan yang didirkan pada 15 November 2021 dan November 2022 dilakukan ekspansi beberapa peluang usaha yang berhubungan dengan pengadaan barang dan jasa. Kantor SDN beralamat pada Jl. Biola Raya J148 Perumnas Antang, Kelurahan Manggala Kota Makassar.</p>
         </div>
     </section>
 {{-- Jumbotron --}}
