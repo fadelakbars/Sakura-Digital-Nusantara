@@ -360,9 +360,17 @@
                         </div>
                         
                     </div>
-                    <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    {{-- <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Kirim
+                    </button> --}}
+                    <button type="submit" id="submit-button" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Kirim
+                        <svg id="loading-spinner" class="hidden w-5 h-5 ml-2 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8h8a8 8 0 11-8-8z"></path>
+                        </svg>
                     </button>
+                    
                 </form>
             </div>
         </div>
@@ -438,5 +446,24 @@
         </div>
     </section>
 {{-- e-commerce --}}
+@if(session('message'))
+<script>
+    Swal.fire({
+        title: 'Berhasil!',
+        text: "{{ session('message') }}",
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
+</script>
+@endif
 
+<script>
+        document.querySelector('form').addEventListener('submit', function() {
+        const submitButton = document.getElementById('submit-button');
+        const spinner = document.getElementById('loading-spinner');
+        
+        submitButton.disabled = true; // Nonaktifkan tombol
+        spinner.classList.remove('hidden'); // Tampilkan spinner
+    });
+</script>
 @endsection

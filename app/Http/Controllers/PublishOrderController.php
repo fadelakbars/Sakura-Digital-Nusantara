@@ -67,8 +67,11 @@ class PublishOrderController extends Controller
             'status' => 'Pending',
         ]);
 
-        alert()->success('Terimakasih!','Orderan berhasil dibuat, silahkan tunggu konfirmasi dari admin');
-        return back();
+        // alert()->success('Terimakasih!','Orderan berhasil dibuat, silahkan tunggu konfirmasi dari admin');
+        // return back();
+        alert()->success('Terimakasih!', 'Orderan berhasil dibuat, silahkan tunggu konfirmasi dari admin');
+        return redirect()->back()->with('message', 'Orderan berhasil dibuat.');
+
     }
 
     public function calculatePrintCost($jumlahCetakan)
