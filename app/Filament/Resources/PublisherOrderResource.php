@@ -67,8 +67,7 @@ class PublisherOrderResource extends Resource
                     // ->searchable()  
                     ->label('Paket Penerbitan'),
 
-                Select::make('print_quantity_id')
-                    ->relationship('printQuantity', 'quantity')
+                Select::make('price_per_unit')
                     ->label('Range Harga Cetakan Perbuku'),
                 // END RELASI TABEL
 

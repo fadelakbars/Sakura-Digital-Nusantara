@@ -25,6 +25,7 @@ class PublisherOrder extends Model
         'client_institution',
         'manuscript_path', 
         'print_qunaitity', 
+        'price_per_unit',
         'invoice_number', //bukan user
         'invoice_path', //bukan user 
         'status', //bukan user

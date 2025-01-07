@@ -42,6 +42,8 @@ class PublishOrderController extends Controller
 
         $printCost = $this->calculatePrintCost($jumlahCetakan);
 
+        $cetaksatuan = $printCost['price_per_unit'];
+
         $totalPrice = $priceRange->price + $printCost['total_cost'] + $package->base_price;
         // $printQuantity = $request->input('print_quantity');
         // $totalPrice = $priceRange->price + $package->base_price;
@@ -60,6 +62,7 @@ class PublishOrderController extends Controller
             'package_id' => $package->id,
             'price_range_id' => $package->id,
             'print_qunaitity' => $request->input('print_qunaitity'),
+            'price_per_unit' => $cetaksatuan,
             'total_price' => $totalPrice,
             'status' => 'Pending',
         ]);
