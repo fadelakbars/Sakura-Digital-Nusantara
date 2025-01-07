@@ -291,6 +291,10 @@
                         <input type="text" name="client_name" id="client_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Lengkap beserta gelar" required="">
                     </div>
                     <div>
+                        <label for="client_phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Whatsapp</label>
+                        <input type="email" name="client_phone" id="client_phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0812345678" required="">
+                    </div>
+                    <div class="col-span-2">
                         <label for="book_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Judul</label>
                         <input type="text" name="book_title" id="book_title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Judul Buku" required="">
                     </div>
@@ -305,10 +309,7 @@
                             <option value="Wanita">Wanita</option>
                         </select>
                     </div>
-                    <div>
-                        <label for="client_phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Whatsapp</label>
-                        <input type="email" name="client_phone" id="client_phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0812345678" required="">
-                    </div>
+
                     <div>
                         <label for="client_job_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pekerjaan</label>
                         <input type="text" name="client_job_title" id="client_job_title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Penulis, Peneliti" required="">
@@ -337,10 +338,6 @@
                     <div>
                         <label for="print_qunaitity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Cetakan</label>
                         <input type="number" name="print_qunaitity" id="print_qunaitity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="jumlah buku yang ingin dicetak diluar">
-                    </div>
-                    <div>
-                        <label for="manuscript_path" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Manuskrip</label>
-                        <input type="file" name="manuscript_path" id="manuscript_path" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Contoh CV. Sakura Digital" required="">
                     </div>
                     <div class="col-span-2">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
