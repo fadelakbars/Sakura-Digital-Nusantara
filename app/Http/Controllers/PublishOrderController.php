@@ -60,7 +60,7 @@ class PublishOrderController extends Controller
             'client_institution' => $request->input('client_institution'),
             'manuscript_path' => $manuscriptPath,
             'package_id' => $package->id,
-            'price_range_id' => $package->id,
+            'price_range_id' => $priceRange->id,
             'print_qunaitity' => $request->input('print_qunaitity'),
             'price_per_unit' => $cetaksatuan,
             'total_price' => $totalPrice,
