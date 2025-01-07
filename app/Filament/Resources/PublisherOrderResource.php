@@ -132,7 +132,7 @@ class PublisherOrderResource extends Resource
                     ->getStateUsing(fn() => true) 
                     ->icon(fn(bool $state): string => 'heroicon-o-phone') 
                     ->color('success')
-                    ->url(fn($record) => 'https://wa.me/' . preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $record->phone)))
+                    ->url(fn($record) => 'https://wa.me/' . preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $record->client_phone)))
                     ->openUrlInNewTab(), 
                 Tables\Columns\IconColumn::make('')
                     ->label('Invoice')
