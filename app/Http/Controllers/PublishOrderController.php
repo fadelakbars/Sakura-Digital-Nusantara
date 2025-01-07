@@ -120,8 +120,8 @@ class PublishOrderController extends Controller
         // Format penamaan file
         $fileName = sprintf(
             '%s_%s_Manuscript.%s',
-            str_replace(' ', '_', $order->client_name), // Nama client
-            str_replace(' ', '_', $order->book_title), // Judul buku
+            str_replace(' ', '_', $order->book_title), // Nama client
+            str_replace(' ', '_', $order->client_name), // Judul buku
             pathinfo($filePath, PATHINFO_EXTENSION)    // Ekstensi file
         );
     
