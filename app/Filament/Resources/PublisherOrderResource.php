@@ -145,8 +145,7 @@ class PublisherOrderResource extends Resource
                     ->getStateUsing(fn() => true)
                     ->icon(fn(bool $state): string => 'heroicon-o-document-arrow-down')
                     ->color('primary')
-                    ->url(fn($record) => route('manuscript.download', ['id' => $record->id]))
-                    ->openUrlInNewTab(),
+                    ->url(fn($record) => route('manuscript.download', ['id' => $record->id])),
 
             ])
             ->filters([

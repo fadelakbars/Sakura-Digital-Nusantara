@@ -111,7 +111,7 @@ class PublishOrderController extends Controller
             return redirect()->back()->with('error', 'Manuscript file not found.');
         }
 
-        $filePath = storage_path('app/' . $order->manuscript_path);
+        $filePath = storage_path('app/private/' . $order->manuscript_path);
 
         if (!file_exists($filePath)) {
             return redirect()->back()->with('error', 'Manuscript file not found on server.');
