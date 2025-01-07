@@ -133,6 +133,7 @@
         <h3 style="margin-bottom: 10px; font-size: 14px;">Detail Layanan</h3>
         <table>
             <tr>
+                
                 <th>Layanan</th>
                 <td>{{ $invoice->package_id }}</td>
             </tr>
