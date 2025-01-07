@@ -67,8 +67,8 @@ class PublisherOrderResource extends Resource
                     // ->searchable()  
                     ->label('Paket Penerbitan'),
 
-                Select::make('price_per_unit')
-                    ->label('Range Harga Cetakan Perbuku'),
+                TextInput::make('price_per_unit')
+                    ->label('Harga Cetak Perbuku'),
                 // END RELASI TABEL
 
                 TextInput::make('client_email')
