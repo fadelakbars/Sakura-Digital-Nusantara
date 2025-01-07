@@ -29,14 +29,6 @@ class TurnitinOrderResource extends Resource
     {
         return $form
             ->schema([
-                //
-            ]);
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
                 Forms\Components\Select::make('status')
                     ->options([
                         'Pending' => 'Pending',
@@ -54,8 +46,13 @@ class TurnitinOrderResource extends Resource
                 TextInput::make('invoice_number')->label('Invooice'),
                 TextInput::make('invoice_path')->label('Path'),
                 TextInput::make('total_price')->label('Harga'),
-            ])
-            ->filters([
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
                 TextColumn::make('client_name')->label('Nama')->searchable()->sortable(),
                 TextColumn::make('document_title')->label('Nama Dokumen')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('total_price')->label('Total Harga')->money('IDR')->searchable()->sortable(),
@@ -79,6 +76,9 @@ class TurnitinOrderResource extends Resource
                     ->color('primary')
                     ->url(fn($record) => route('manuscript.download', ['id' => $record->id])),
 
+            ])
+            ->filters([
+                
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
