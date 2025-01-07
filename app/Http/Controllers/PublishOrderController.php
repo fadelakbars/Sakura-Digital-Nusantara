@@ -38,7 +38,7 @@ class PublishOrderController extends Controller
         $package = PublisherPackage::find($request->input('service_type'));
         $priceRange = PriceRange::find($request->input('book_size'));
         
-        $jumlahCetakan = $request->input('print_quantity');
+        $jumlahCetakan = $request->input('print_qunaitity');
 
         $printCost = $this->calculatePrintCost($jumlahCetakan);
 
@@ -59,7 +59,7 @@ class PublishOrderController extends Controller
             'manuscript_path' => $manuscriptPath,
             'package_id' => $package->id,
             'price_range_id' => $package->id,
-            'print_qunaitity' => $request->input('print_quantity'),
+            'print_qunaitity' => $request->input('print_qunaitity'),
             'total_price' => $totalPrice,
             'status' => 'Pending',
         ]);
