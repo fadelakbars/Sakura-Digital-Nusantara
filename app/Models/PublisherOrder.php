@@ -33,7 +33,7 @@ class PublisherOrder extends Model
         $newNumber = $lastNumber + 1;
     
         // Format nomor invoice
-        return 'SDN/' . $year . '/' . str_pad($newNumber, 5, '0', STR_PAD_LEFT);
+        return 'SDN/'.'Book/' . $year . '/' . str_pad($newNumber, 5, '0', STR_PAD_LEFT);
     }
 
     /**

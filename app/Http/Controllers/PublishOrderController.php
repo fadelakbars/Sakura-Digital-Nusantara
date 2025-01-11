@@ -45,9 +45,6 @@ class PublishOrderController extends Controller
         $cetaksatuan = $printCost['price_per_unit'];
 
         $totalPrice = $priceRange->price + $printCost['total_cost'] + $package->base_price;
-        // $printQuantity = $request->input('print_quantity');
-        // $totalPrice = $priceRange->price + $package->base_price;
-
 
         PublisherOrder::create([
             'client_name' => $request->input('client_name'),
@@ -67,8 +64,6 @@ class PublishOrderController extends Controller
             'status' => 'Pending',
         ]);
 
-        // alert()->success('Terimakasih!','Orderan berhasil dibuat, silahkan tunggu konfirmasi dari admin');
-        // return back();
         alert()->success('Terimakasih!', 'Orderan berhasil dibuat, silahkan tunggu konfirmasi dari admin');
         return redirect()->back()->with('message', 'Orderan berhasil dibuat.');
 

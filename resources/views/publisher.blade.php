@@ -278,7 +278,7 @@
                     <span class="sr-only">Close modal</span>
                 </button>
             </div>
-            <form class="p-4 md:p-5" method="POST" action="/publisher-order" enctype="multipart/form-data">
+            <form class="p-4 md:p-5" method="POST" action="/turnitin-order" enctype="multipart/form-data">
                 @csrf
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2">

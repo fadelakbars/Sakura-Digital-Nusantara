@@ -21,7 +21,7 @@ class TurnitinOrderResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-check';
 
-    protected static ?string $navigationLabel = 'Turnitin Domunet';
+    protected static ?string $navigationLabel = 'Turnitin Dokomen';
 
     protected static ?string $navigationGroup = 'Publisher';
 
@@ -55,7 +55,6 @@ class TurnitinOrderResource extends Resource
             ->columns([
                 TextColumn::make('client_name')->label('Nama')->searchable()->sortable(),
                 TextColumn::make('document_title')->label('Nama Dokumen')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('total_price')->label('Total Harga')->money('IDR')->searchable()->sortable(),
                 Tables\Columns\IconColumn::make('client_phone')
                     ->label('WA')
                     ->getStateUsing(fn() => true) 
@@ -69,12 +68,12 @@ class TurnitinOrderResource extends Resource
                     ->icon(fn(bool $state): string => 'heroicon-o-arrow-down-on-square') 
                     ->color('warning')
                     ->url(fn($record) => route('invoice.download', ['id' => $record->id])),
-                Tables\Columns\IconColumn::make('manuscript_download')
-                    ->label('Manuskrip')
+                Tables\Columns\IconColumn::make('document_download')
+                    ->label('Dokumen')
                     ->getStateUsing(fn() => true)
                     ->icon(fn(bool $state): string => 'heroicon-o-document-arrow-down')
                     ->color('primary')
-                    ->url(fn($record) => route('manuscript.download', ['id' => $record->id])),
+                    ->url(fn($record) => route('turnitin.download', ['id' => $record->id])),
 
             ])
             ->filters([
