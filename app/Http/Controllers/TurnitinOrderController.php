@@ -29,7 +29,7 @@ class TurnitinOrderController extends Controller
             'client_email' => $request->input('client_email'),
             'client_phone' => $request->input('client_phone'),
             'document_title' => $request->input('document_title'),
-            'document_path' => $request->input('document_path'),
+            'document_path' => $dokumentPath,
             'status'=> 'Pending',
         ]);
 
