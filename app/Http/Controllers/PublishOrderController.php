@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 
 class PublishOrderController extends Controller
 {
-    
 
     public function store(Request $request)
     {

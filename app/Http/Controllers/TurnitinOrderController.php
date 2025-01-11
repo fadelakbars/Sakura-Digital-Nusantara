@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use App\Models\TurnitinOrder;
 use Illuminate\Http\Request;
 
