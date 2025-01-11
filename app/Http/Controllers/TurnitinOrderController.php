@@ -14,7 +14,7 @@ class TurnitinOrderController extends Controller
             'client_email' => 'required|email|max:255',
             'client_phone' => 'required|string|max:255',
             'document_title' => 'required|string|max:255',
-            'document_path' => 'required|string|max:255',
+            'document_path' => 'required|file|mimes:doc,docx|max:2048',
             'invoice_number' => 'required|string|max:255',
             'invoice_path' => 'required|string|max:255',
         ]);
